@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C558819D2BC960870015C03C /* ConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558819C2BC960870015C03C /* ConsoleMessage.swift */; };
+		C558819F2BC971780015C03C /* YearLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558819E2BC971780015C03C /* YearLimit.swift */; };
 		C58C0EAF2BC6D9C200C47451 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C0EAE2BC6D9C200C47451 /* main.swift */; };
+		C58C0EB92BC6E06E00C47451 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C0EB82BC6E06D00C47451 /* Body.swift */; };
+		C58C0EBB2BC6E71000C47451 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C0EBA2BC6E71000C47451 /* Car.swift */; };
+		C58C0EC12BC6F58300C47451 /* CarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C0EC02BC6F58300C47451 /* CarManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +28,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C558819C2BC960870015C03C /* ConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleMessage.swift; sourceTree = "<group>"; };
+		C558819E2BC971780015C03C /* YearLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearLimit.swift; sourceTree = "<group>"; };
 		C58C0EAB2BC6D9C200C47451 /* homework1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = homework1; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58C0EAE2BC6D9C200C47451 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C58C0EB82BC6E06D00C47451 /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
+		C58C0EBA2BC6E71000C47451 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		C58C0EC02BC6F58300C47451 /* CarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +67,30 @@
 		C58C0EAD2BC6D9C200C47451 /* homework1 */ = {
 			isa = PBXGroup;
 			children = (
+				C58C0EB52BC6E02C00C47451 /* Enum */,
+				C58C0EB72BC6E04300C47451 /* Struct */,
 				C58C0EAE2BC6D9C200C47451 /* main.swift */,
+				C58C0EC02BC6F58300C47451 /* CarManager.swift */,
 			);
 			path = homework1;
+			sourceTree = "<group>";
+		};
+		C58C0EB52BC6E02C00C47451 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C58C0EB82BC6E06D00C47451 /* Body.swift */,
+				C558819C2BC960870015C03C /* ConsoleMessage.swift */,
+				C558819E2BC971780015C03C /* YearLimit.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		C58C0EB72BC6E04300C47451 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				C58C0EBA2BC6E71000C47451 /* Car.swift */,
+			);
+			path = Struct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58C0EC12BC6F58300C47451 /* CarManager.swift in Sources */,
+				C58C0EB92BC6E06E00C47451 /* Body.swift in Sources */,
+				C558819F2BC971780015C03C /* YearLimit.swift in Sources */,
+				C558819D2BC960870015C03C /* ConsoleMessage.swift in Sources */,
 				C58C0EAF2BC6D9C200C47451 /* main.swift in Sources */,
+				C58C0EBB2BC6E71000C47451 /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
