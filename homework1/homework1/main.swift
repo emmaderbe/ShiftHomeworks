@@ -2,7 +2,6 @@ import Foundation
 
 main()
 
-// MARK: - main() - включение консольного приложения 
 private func main() {
     let car = CarManager()
     var shouldQuit = false
@@ -22,7 +21,7 @@ private func main() {
             shouldQuit = true
             print(ConsoleMessage.goodbyeMessage.rawValue)
         default:
-            print(ConsoleMessage.invalidInput.rawValue)
+            print(ConsoleError.invalidInputError.rawValue)
         }
     }
 }

@@ -1,28 +1,26 @@
 import Foundation
 
-// MARK: - Property
 class CarManager {
     private var cars = [Car]()
 }
 
-// MARK: - addCar() - ввод автомобиля в базу
 extension CarManager {
     func addCar() {
         print(ConsoleMessage.stopTaskMessage.rawValue)
         
         guard let manufacturer = getInput(
-            prompt: ConsoleMessage.enterManufacturer.rawValue,
-            invalidPrompt: ConsoleMessage.manufacturerError.rawValue) else { return }
+            prompt: ConsoleMessage.enterManufacturerMessage.rawValue,
+            invalidPrompt: ConsoleError.manufacturerError.rawValue) else { return }
         
         guard let model = getInput(
-            prompt: ConsoleMessage.enterModel.rawValue,
-            invalidPrompt: ConsoleMessage.modelError.rawValue) else { return }
+            prompt: ConsoleMessage.enterModelMessage.rawValue,
+            invalidPrompt: ConsoleError.modelError.rawValue) else { return }
         
         var yearOfIssue: Int?
         while true {
             let yearInput = getInput(
-                prompt: ConsoleMessage.enterYear.rawValue,
-                invalidPrompt: ConsoleMessage.yearError.rawValue,
+                prompt: ConsoleMessage.enterYearMessage.rawValue,
+                invalidPrompt: ConsoleError.yearError.rawValue,
                 isOptional: true)
             
             if let yearInput = yearInput {
@@ -30,7 +28,7 @@ extension CarManager {
                     yearOfIssue = Int(yearInput)
                     break
                 } else {
-                    print(ConsoleMessage.yearError.rawValue)
+                    print(ConsoleError.yearError.rawValue)
                 }
             } else {
                 break
@@ -40,31 +38,30 @@ extension CarManager {
         var body: Body?
         repeat {
             guard let bodyString = getInput(
-                prompt: ConsoleMessage.enterBodyType.rawValue,
-                invalidPrompt: ConsoleMessage.bodyTypeError.rawValue) else { return }
+                prompt: ConsoleMessage.enterBodyTypeMessage.rawValue,
+                invalidPrompt: ConsoleError.bodyTypeError.rawValue) else { return }
             body = Body(rawValue: bodyString.lowercased().capitalized)
             if body == nil {
-                print(ConsoleMessage.bodyTypeError.rawValue)
+                print(ConsoleError.bodyTypeError.rawValue)
             }
         } while body == nil
         guard let bodyUnwrapped = body else { return }
         
         let carNumber = getInput(
-            prompt: ConsoleMessage.enterCarNumber.rawValue,
-            invalidPrompt: ConsoleMessage.enterCarNumber.rawValue,
+            prompt: ConsoleMessage.enterCarNumberMessage.rawValue,
+            invalidPrompt: ConsoleMessage.enterCarNumberMessage.rawValue,
             isOptional: true)
         
         let newCar = Car(manufacturer: manufacturer, model: model, body: bodyUnwrapped, yearOfIssue: yearOfIssue, carNumber: carNumber)
         cars.append(newCar)
-        print(ConsoleMessage.succesfulCarAddition.rawValue)
+        print(ConsoleMessage.succesfulCarAdditionMessage.rawValue)
     }
 }
 
-// MARK: - getAllCars() - получение списка всех автомобилей
 extension CarManager {
     func getAllCars() {
         if cars.isEmpty {
-            print(ConsoleMessage.emptyCarList.rawValue)
+            print(ConsoleError.emptyCarListError.rawValue)
         } else {
             for (index, car) in cars.enumerated() {
                 print("Автомобиль номер \(index + 1): \n\(car.description())")
@@ -73,14 +70,13 @@ extension CarManager {
     }
 }
 
-// MARK: - filterCarsByBody() - фильтрация списка автомобилей по типу кузова и последующий его вывод
 extension CarManager {
     func filterCarsByBody() {
         var body: Body?
         while body == nil {
             let bodyInput = getInput(
-                prompt: ConsoleMessage.filterByBodyType.rawValue,
-                invalidPrompt: ConsoleMessage.bodyTypeError.rawValue
+                prompt: ConsoleMessage.filterByBodyTypeMessage.rawValue,
+                invalidPrompt: ConsoleError.bodyTypeError.rawValue
             )
             
             if let bodyInput = bodyInput, let validatedBody = Body(rawValue: bodyInput.lowercased().capitalized) {
@@ -101,7 +97,6 @@ extension CarManager {
     }
 }
 
-// MARK: - getInput() - вспомогательная функция для ввода автомобилей в базу
 extension CarManager {
    private func getInput(prompt: String, invalidPrompt: String, isOptional: Bool = false) -> String? {
         while true {
@@ -115,7 +110,7 @@ extension CarManager {
                 if isOptional {
                     return nil
                 } else {
-                    print(ConsoleMessage.emptyInput.rawValue)
+                    print(ConsoleError.emptyInputError.rawValue)
                 }
             default:
                 return input
@@ -124,10 +119,9 @@ extension CarManager {
     }
 }
 
-// MARK: - isValidYear() - проверка года выпуска автомобиля
 extension CarManager {
    private func isValidYear(_ year: String) -> Bool {
-       guard let yearInt = Int(year), yearInt >= YearLimit.fistCarInHistoryYear.rawValue, yearInt <= YearLimit.currentYear.rawValue, year.count == YearLimit.numCount.rawValue else {
+       guard let yearInt = Int(year), yearInt >= YearLimit.fistCarInHistoryYear.rawValue, yearInt <= YearLimit.currentYear, year.count == YearLimit.numCount.rawValue else {
             return false
         }
         return true

@@ -1,6 +1,5 @@
 import Foundation
 
-// MARK: - Properties
 struct Car {
     let manufacturer: String
     let model: String
@@ -9,7 +8,6 @@ struct Car {
     let carNumber: String?
 }
 
-// MARK: - description() - составление макета об автомобиле
 extension Car {
     func description() -> String {
         let yearString = yearOfIssue.map(String.init) ?? "-"
