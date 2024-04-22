@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C523A12F2BD3DF6A00A14B1C /* ISafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C523A12E2BD3DF6A00A14B1C /* ISafeArray.swift */; };
+		C523A1312BD3E1CA00A14B1C /* SafetyThreadArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C523A1302BD3E1CA00A14B1C /* SafetyThreadArray.swift */; };
+		C573D08D2BD6E0BD008739E9 /* SafetyArrayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573D08C2BD6E0BD008739E9 /* SafetyArrayError.swift */; };
+		C573D08F2BD71D67008739E9 /* ConsoleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573D08E2BD71D67008739E9 /* ConsoleMessage.swift */; };
 		C57993752BCF03BF005088F2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57993742BCF03BF005088F2 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +27,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C523A12E2BD3DF6A00A14B1C /* ISafeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISafeArray.swift; sourceTree = "<group>"; };
+		C523A1302BD3E1CA00A14B1C /* SafetyThreadArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyThreadArray.swift; sourceTree = "<group>"; };
+		C573D08C2BD6E0BD008739E9 /* SafetyArrayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyArrayError.swift; sourceTree = "<group>"; };
+		C573D08E2BD71D67008739E9 /* ConsoleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleMessage.swift; sourceTree = "<group>"; };
 		C57993712BCF03BF005088F2 /* homework2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = homework2; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57993742BCF03BF005088F2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +65,10 @@
 		C57993732BCF03BF005088F2 /* homework2 */ = {
 			isa = PBXGroup;
 			children = (
+				C573D08E2BD71D67008739E9 /* ConsoleMessage.swift */,
+				C573D08C2BD6E0BD008739E9 /* SafetyArrayError.swift */,
+				C523A12E2BD3DF6A00A14B1C /* ISafeArray.swift */,
+				C523A1302BD3E1CA00A14B1C /* SafetyThreadArray.swift */,
 				C57993742BCF03BF005088F2 /* main.swift */,
 			);
 			path = homework2;
@@ -120,7 +132,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C523A12F2BD3DF6A00A14B1C /* ISafeArray.swift in Sources */,
 				C57993752BCF03BF005088F2 /* main.swift in Sources */,
+				C573D08F2BD71D67008739E9 /* ConsoleMessage.swift in Sources */,
+				C573D08D2BD6E0BD008739E9 /* SafetyArrayError.swift in Sources */,
+				C523A1312BD3E1CA00A14B1C /* SafetyThreadArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
