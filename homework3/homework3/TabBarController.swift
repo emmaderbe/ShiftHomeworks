@@ -24,11 +24,10 @@ extension TabBarController {
 extension TabBarController {
     private func createNav(with title: String,
                               and image: UIImage?,
-                              vc: UIViewController) -> UINavigationController {
-       let nav = UINavigationController(rootViewController: vc)
-        nav.tabBarItem.title = title
-        nav.tabBarItem.image = image
-        return nav
+                              vc: UIViewController) -> UIViewController {
+        vc.tabBarItem.title = title
+        vc.tabBarItem.image = image
+        return vc
     }
 }
 
