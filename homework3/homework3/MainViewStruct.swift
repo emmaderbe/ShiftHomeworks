@@ -5,4 +5,5 @@ struct MainViewStruct {
     let age: String
     let education: String
     let location: String
+    let photo: String
 }

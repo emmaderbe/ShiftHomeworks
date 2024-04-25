@@ -15,6 +15,10 @@
 		C5A7E55B2BD97850000AAA0A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C5A7E55A2BD97850000AAA0A /* Base */; };
 		C5C1D4912BD99EC90065A7DB /* MainViewEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1D4902BD99EC90065A7DB /* MainViewEnum.swift */; };
 		C5C1D4952BD9A2260065A7DB /* MainViewStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1D4942BD9A2260065A7DB /* MainViewStruct.swift */; };
+		C5C1D4992BD9A5CB0065A7DB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1D4982BD9A5CB0065A7DB /* TabBarController.swift */; };
+		C5C1D49B2BD9A8FC0065A7DB /* ItSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1D49A2BD9A8FC0065A7DB /* ItSkillsViewController.swift */; };
+		C5C1D49D2BD9A9400065A7DB /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1D49C2BD9A93F0065A7DB /* HobbyViewController.swift */; };
+		C5FBCC262BDAC074003B4EF8 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FBCC252BDAC074003B4EF8 /* UIColor + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +29,13 @@
 		C5A7E5552BD9784D000AAA0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5A7E5572BD97850000AAA0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5A7E55A2BD97850000AAA0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C5A7E55C2BD97850000AAA0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = homework3/Info.plist; sourceTree = "<group>"; };
+		C5A7E55C2BD97850000AAA0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5C1D4902BD99EC90065A7DB /* MainViewEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewEnum.swift; sourceTree = "<group>"; };
 		C5C1D4942BD9A2260065A7DB /* MainViewStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewStruct.swift; sourceTree = "<group>"; };
+		C5C1D4982BD9A5CB0065A7DB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C5C1D49A2BD9A8FC0065A7DB /* ItSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItSkillsViewController.swift; sourceTree = "<group>"; };
+		C5C1D49C2BD9A93F0065A7DB /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
+		C5FBCC252BDAC074003B4EF8 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				C5A7E54D2BD9784D000AAA0A /* homework3 */,
-				C5A7E55C2BD97850000AAA0A /* Info.plist */,
 				C5A7E54C2BD9784D000AAA0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,7 +72,9 @@
 				C5C1D4922BD9A1E60065A7DB /* Models */,
 				C5C1D48D2BD99AC00065A7DB /* Views */,
 				C5C1D48B2BD99A920065A7DB /* ViewControllers */,
+				C5FBCC272BDAC15B003B4EF8 /* Extensions */,
 				C5C1D48F2BD99B050065A7DB /* Resourses */,
+				C5A7E55C2BD97850000AAA0A /* Info.plist */,
 			);
 			path = homework3;
 			sourceTree = "<group>";
@@ -73,7 +82,10 @@
 		C5C1D48B2BD99A920065A7DB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C5A7E5522BD9784D000AAA0A /* MainInfoViewController.swift */,
+				C5C1D4982BD9A5CB0065A7DB /* TabBarController.swift */,
+				C5FBCC222BDABCB4003B4EF8 /* MainInfo */,
+				C5FBCC232BDABCC2003B4EF8 /* ItSkills */,
+				C5FBCC242BDABCFA003B4EF8 /* Hobby */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -81,7 +93,7 @@
 		C5C1D48D2BD99AC00065A7DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C5A7E5542BD9784D000AAA0A /* Main.storyboard */,
+				C5FBCC212BDABCA8003B4EF8 /* MainInfo */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -107,10 +119,58 @@
 		C5C1D4922BD9A1E60065A7DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C5FBCC202BDABC94003B4EF8 /* MainInfo */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C5FBCC202BDABC94003B4EF8 /* MainInfo */ = {
+			isa = PBXGroup;
+			children = (
 				C5C1D4902BD99EC90065A7DB /* MainViewEnum.swift */,
 				C5C1D4942BD9A2260065A7DB /* MainViewStruct.swift */,
 			);
-			name = Models;
+			name = MainInfo;
+			sourceTree = "<group>";
+		};
+		C5FBCC212BDABCA8003B4EF8 /* MainInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C5A7E5542BD9784D000AAA0A /* Main.storyboard */,
+			);
+			name = MainInfo;
+			sourceTree = "<group>";
+		};
+		C5FBCC222BDABCB4003B4EF8 /* MainInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C5A7E5522BD9784D000AAA0A /* MainInfoViewController.swift */,
+			);
+			name = MainInfo;
+			sourceTree = "<group>";
+		};
+		C5FBCC232BDABCC2003B4EF8 /* ItSkills */ = {
+			isa = PBXGroup;
+			children = (
+				C5C1D49A2BD9A8FC0065A7DB /* ItSkillsViewController.swift */,
+			);
+			name = ItSkills;
+			sourceTree = "<group>";
+		};
+		C5FBCC242BDABCFA003B4EF8 /* Hobby */ = {
+			isa = PBXGroup;
+			children = (
+				C5C1D49C2BD9A93F0065A7DB /* HobbyViewController.swift */,
+			);
+			name = Hobby;
+			sourceTree = "<group>";
+		};
+		C5FBCC272BDAC15B003B4EF8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C5FBCC252BDAC074003B4EF8 /* UIColor + Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,11 +244,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C1D49B2BD9A8FC0065A7DB /* ItSkillsViewController.swift in Sources */,
 				C5A7E5532BD9784D000AAA0A /* MainInfoViewController.swift in Sources */,
 				C5A7E54F2BD9784D000AAA0A /* AppDelegate.swift in Sources */,
 				C5C1D4952BD9A2260065A7DB /* MainViewStruct.swift in Sources */,
+				C5C1D4992BD9A5CB0065A7DB /* TabBarController.swift in Sources */,
 				C5C1D4912BD99EC90065A7DB /* MainViewEnum.swift in Sources */,
+				C5FBCC262BDAC074003B4EF8 /* UIColor + Extensions.swift in Sources */,
 				C5A7E5512BD9784D000AAA0A /* SceneDelegate.swift in Sources */,
+				C5C1D49D2BD9A9400065A7DB /* HobbyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +409,6 @@
 				INFOPLIST_FILE = homework3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -378,7 +441,6 @@
 				INFOPLIST_FILE = homework3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

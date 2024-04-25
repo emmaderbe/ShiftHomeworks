@@ -14,7 +14,7 @@ class MainInfoViewController: UIViewController {
     @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
-    let mainViewStruct = MainViewStruct(name: "Эмма Дербе", age: "24", education: "Экономист", location: "Краснодар")
+    private let mainViewStruct = MainViewStruct(name: "Эмма Дербе", age: "24", education: "Экономист", location: "Краснодар", photo: "mainPortret")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +23,25 @@ class MainInfoViewController: UIViewController {
 }
 
 extension MainInfoViewController {
-    func setupView() {
+    private func setupView() {
+        view.backgroundColor = .accentBackground
         backgroundView.layer.cornerRadius = 16
-        
+        setupPhoto()
+        setupText()
+    }
+}
+
+extension MainInfoViewController {
+    private func setupPhoto() {
+        mainPortret.image = UIImage(named: mainViewStruct.photo)
         mainPortret.layer.cornerRadius = mainPortret.frame.height / 2
         mainPortret.layer.borderWidth = 5
         mainPortret.layer.borderColor = UIColor.white.cgColor
-        
+    }
+}
+
+extension MainInfoViewController {
+    private func setupText() {
         educationTitleLabel.text = MainViewEnum.educationTitleLabel.rawValue
         locationTitleLabel.text = MainViewEnum.locationTitleLabel.rawValue
         
