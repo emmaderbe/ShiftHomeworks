@@ -8,14 +8,13 @@ class ItSkillsViewController: UIViewController {
                                                 Жду от обучения шанса отшлифовать и систематизировать все накопленные знания. Мне очень нравится система домашних заданий с обратной связью от опытных разработчиков — это помогает мне не только решать сложные задачи, но и, я надеюсь, подготовит меня к карьере в компании, где ценят стремление к росту и увлеченность :)
                                                 """,
                                                 jokeImage: "joke")
-    private var itSkillsView = ItSkillsView()
+    private let itSkillsView = ItSkillsView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupConstraints()
     }
-    
 }
 
 extension ItSkillsViewController {

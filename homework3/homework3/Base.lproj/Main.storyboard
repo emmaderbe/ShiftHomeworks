@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rZs-yD-LQd">
-                                <rect key="frame" x="26" y="106.66666666666666" width="341" height="339.66666666666663"/>
+                                <rect key="frame" x="26" y="131.66666666666666" width="341" height="339.66666666666674"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rZs-yD-LQd" secondAttribute="height" multiplier="1:1" id="Q0e-y8-KUe"/>
                                     <constraint firstAttribute="height" constant="341" id="hhZ-mB-PQA"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0y-zo-e8b">
-                                <rect key="frame" x="15" y="461.66666666666674" width="363" height="168"/>
+                                <rect key="frame" x="15" y="486.66666666666674" width="363" height="168"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="u4V-EF-Evg">
                                         <rect key="frame" x="15" y="20" width="333" height="128"/>
@@ -96,7 +96,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="rZs-yD-LQd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="DVZ-0d-aJm"/>
+                            <constraint firstItem="rZs-yD-LQd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-125" id="DVZ-0d-aJm"/>
                             <constraint firstItem="O0y-zo-e8b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="FWt-Fc-6G8"/>
                             <constraint firstItem="rZs-yD-LQd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aYT-M0-myn"/>
                             <constraint firstItem="O0y-zo-e8b" firstAttribute="top" secondItem="rZs-yD-LQd" secondAttribute="bottom" constant="15" id="bQR-wo-uLi"/>

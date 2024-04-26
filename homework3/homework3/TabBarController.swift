@@ -6,6 +6,11 @@ class TabBarController: UITabBarController {
         setupTabBar()
         setupAppearance()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tabBar.layer.cornerRadius = tabBar.frame.width / 15
+    }
 }
 
 extension TabBarController {
@@ -23,8 +28,8 @@ extension TabBarController {
 
 extension TabBarController {
     private func createNav(with title: String,
-                              and image: UIImage?,
-                              vc: UIViewController) -> UIViewController {
+                           and image: UIImage?,
+                           vc: UIViewController) -> UIViewController {
         vc.tabBarItem.title = title
         vc.tabBarItem.image = image
         return vc
@@ -33,9 +38,9 @@ extension TabBarController {
 
 extension TabBarController {
     private func setupAppearance() {
-        self.tabBar.backgroundColor = .white
-        self.tabBar.layer.cornerRadius = tabBar.frame.width / 15
-        self.tabBar.tintColor = .systemBrown
-        self.tabBar.unselectedItemTintColor = .systemGray2
+        tabBar.backgroundColor = .white
+        tabBar.tintColor = .systemBrown
+        tabBar.unselectedItemTintColor = .systemGray2
+        tabBar.clipsToBounds = true
     }
 }

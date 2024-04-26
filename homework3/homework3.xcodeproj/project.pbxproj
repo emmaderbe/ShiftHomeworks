@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C56841CF2BDBF1F600F5D29E /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56841CE2BDBF1F600F5D29E /* HobbyView.swift */; };
+		C56841D12BDBF2E600F5D29E /* HobbyEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56841D02BDBF2E600F5D29E /* HobbyEnum.swift */; };
+		C56841D32BDBF3CE00F5D29E /* HobbyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56841D22BDBF3CE00F5D29E /* HobbyStruct.swift */; };
+		C56841D72BDBF4AC00F5D29E /* HobbyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56841D62BDBF4AC00F5D29E /* HobbyCellView.swift */; };
 		C5A7E54F2BD9784D000AAA0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7E54E2BD9784D000AAA0A /* AppDelegate.swift */; };
 		C5A7E5512BD9784D000AAA0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7E5502BD9784D000AAA0A /* SceneDelegate.swift */; };
 		C5A7E5532BD9784D000AAA0A /* MainInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7E5522BD9784D000AAA0A /* MainInfoViewController.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C56841CE2BDBF1F600F5D29E /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
+		C56841D02BDBF2E600F5D29E /* HobbyEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyEnum.swift; sourceTree = "<group>"; };
+		C56841D22BDBF3CE00F5D29E /* HobbyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyStruct.swift; sourceTree = "<group>"; };
+		C56841D62BDBF4AC00F5D29E /* HobbyCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCellView.swift; sourceTree = "<group>"; };
 		C5A7E54B2BD9784D000AAA0A /* homework3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A7E54E2BD9784D000AAA0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5A7E5502BD9784D000AAA0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +65,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C56841D42BDBF40A00F5D29E /* Hobby */ = {
+			isa = PBXGroup;
+			children = (
+				C56841D02BDBF2E600F5D29E /* HobbyEnum.swift */,
+				C56841D22BDBF3CE00F5D29E /* HobbyStruct.swift */,
+			);
+			name = Hobby;
+			sourceTree = "<group>";
+		};
+		C56841D52BDBF42000F5D29E /* Hobby */ = {
+			isa = PBXGroup;
+			children = (
+				C56841CE2BDBF1F600F5D29E /* HobbyView.swift */,
+				C56841D62BDBF4AC00F5D29E /* HobbyCellView.swift */,
+			);
+			name = Hobby;
+			sourceTree = "<group>";
+		};
 		C5A7E5422BD9784D000AAA0A = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +129,7 @@
 			children = (
 				C5FBCC212BDABCA8003B4EF8 /* MainInfo */,
 				C5FBCC2C2BDAC756003B4EF8 /* ItSkills */,
+				C56841D52BDBF42000F5D29E /* Hobby */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -130,6 +157,7 @@
 			children = (
 				C5FBCC202BDABC94003B4EF8 /* MainInfo */,
 				C5FBCC2F2BDAC8DB003B4EF8 /* ItSkills */,
+				C56841D42BDBF40A00F5D29E /* Hobby */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -272,11 +300,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56841D12BDBF2E600F5D29E /* HobbyEnum.swift in Sources */,
 				C5C1D49B2BD9A8FC0065A7DB /* ItSkillsViewController.swift in Sources */,
 				C5FBCC2B2BDAC4F2003B4EF8 /* UILabel + Extensions.swift in Sources */,
 				C5A7E5532BD9784D000AAA0A /* MainInfoViewController.swift in Sources */,
 				C5FBCC312BDAC8EF003B4EF8 /* ItSkillsStruct.swift in Sources */,
+				C56841D32BDBF3CE00F5D29E /* HobbyStruct.swift in Sources */,
 				C5A7E54F2BD9784D000AAA0A /* AppDelegate.swift in Sources */,
+				C56841D72BDBF4AC00F5D29E /* HobbyCellView.swift in Sources */,
+				C56841CF2BDBF1F600F5D29E /* HobbyView.swift in Sources */,
 				C5C1D4952BD9A2260065A7DB /* MainViewStruct.swift in Sources */,
 				C5FBCC2E2BDAC807003B4EF8 /* ItSkillsEnum.swift in Sources */,
 				C5C1D4992BD9A5CB0065A7DB /* TabBarController.swift in Sources */,

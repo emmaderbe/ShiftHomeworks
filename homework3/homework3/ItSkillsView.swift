@@ -36,7 +36,6 @@ class ItSkillsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame )
-        backgroundColor = .white
         setupView()
         setupConstraints()
     }
@@ -48,6 +47,7 @@ class ItSkillsView: UIView {
 
 extension ItSkillsView {
     private func setupView() {
+        backgroundColor = .white
         addSubview(scrollView)
         scrollView.addSubview(stackView)
         
@@ -66,12 +66,12 @@ extension ItSkillsView {
             scrollView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -15),
             
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
             jokeImage.heightAnchor.constraint(equalTo: jokeImage.widthAnchor)
