@@ -1,6 +1,6 @@
 import UIKit
 
-public extension UILabel {
+final class LabelFactory {
     static func createTitleLabel() -> UILabel {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 20)

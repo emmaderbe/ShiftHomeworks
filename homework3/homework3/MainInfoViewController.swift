@@ -1,7 +1,7 @@
 import UIKit
 
 class MainInfoViewController: UIViewController {
-
+    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var mainPortret: UIImageView!
     
@@ -22,8 +22,8 @@ class MainInfoViewController: UIViewController {
     }
 }
 
-extension MainInfoViewController {
-    private func setupView() {
+private extension MainInfoViewController {
+    func setupView() {
         view.backgroundColor = .accentBackground
         backgroundView.layer.cornerRadius = 16
         setupPhoto()
@@ -31,8 +31,8 @@ extension MainInfoViewController {
     }
 }
 
-extension MainInfoViewController {
-    private func setupPhoto() {
+private extension MainInfoViewController {
+    func setupPhoto() {
         mainPortret.image = UIImage(named: mainViewStruct.photo)
         mainPortret.layer.cornerRadius = mainPortret.frame.height / 2
         mainPortret.layer.borderWidth = 5
@@ -40,10 +40,10 @@ extension MainInfoViewController {
     }
 }
 
-extension MainInfoViewController {
-    private func setupText() {
-        educationTitleLabel.text = MainViewEnum.educationTitleLabel.rawValue
-        locationTitleLabel.text = MainViewEnum.locationTitleLabel.rawValue
+private extension MainInfoViewController {
+    func setupText() {
+        educationTitleLabel.text = MainViewEnum.InterfaceText.educationTitleLabel
+        locationTitleLabel.text = MainViewEnum.InterfaceText.locationTitleLabel
         
         nameLabel.text = mainViewStruct.name + ","
         ageLabel.text = mainViewStruct.age

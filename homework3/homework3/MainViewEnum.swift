@@ -1,6 +1,8 @@
 import Foundation
 
-enum MainViewEnum: String {
-    case educationTitleLabel = "📚 Образованиe:"
-    case locationTitleLabel = "📍Локация:"
+enum MainViewEnum {
+    enum InterfaceText {
+        static let educationTitleLabel = "📚 Образованиe:"
+        static let locationTitleLabel = "📍Локация:"
+    }
 }

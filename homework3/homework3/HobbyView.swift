@@ -1,33 +1,15 @@
 import UIKit
 
 class HobbyView: UIView {
-    let firstHobbyCell = HobbyCellView()
-    let secondHobbyCell = HobbyCellView()
-    let thirdHobbyCell = HobbyCellView()
-    let fourthHobbyCell = HobbyCellView()
+    private let firstSquareCell = HobbySquareView()
+    private let secondSquareCell = HobbySquareView()
+    private let thirdSquareCell = HobbySquareView()
+    private let fourthSquareCell = HobbySquareView()
     
-    private let firstHorizStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 15
-        stack.distribution = .fillEqually
-        return stack
-    }()
-    private let secondHorizStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 15
-        stack.distribution = .fillEqually
-        return stack
-    }()
+    private let firstHorizStackView = StackFactory.createHorizontalStack()
+    private let secondHorizStackView = StackFactory.createHorizontalStack()
     
-    private let verticalStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 15
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
+    private let verticalStackView = StackFactory.createVerticalStack()
     
     override init(frame: CGRect) {
         super.init(frame: frame )
@@ -35,30 +17,31 @@ class HobbyView: UIView {
         setupConstraints()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension HobbyView {
-    private func setupView() {
+private extension HobbyView {
+    func setupView() {
         addSubview(verticalStackView)
         
         verticalStackView.addArrangedSubview(firstHorizStackView)
         verticalStackView.addArrangedSubview(secondHorizStackView)
         
-        firstHorizStackView.addArrangedSubview(firstHobbyCell)
-        firstHorizStackView.addArrangedSubview(secondHobbyCell)
+        firstHorizStackView.addArrangedSubview(firstSquareCell)
+        firstHorizStackView.addArrangedSubview(secondSquareCell)
         
-        secondHorizStackView.addArrangedSubview(thirdHobbyCell)
-        secondHorizStackView.addArrangedSubview(fourthHobbyCell)
+        secondHorizStackView.addArrangedSubview(thirdSquareCell)
+        secondHorizStackView.addArrangedSubview(fourthSquareCell)
         
-        configureCells()
+        designSquare()
     }
 }
 
-extension HobbyView {
-    private func setupConstraints() {
+private extension HobbyView {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             verticalStackView.topAnchor.constraint(equalTo: topAnchor),
             verticalStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -68,12 +51,23 @@ extension HobbyView {
     }
 }
 
-extension HobbyView {
-    private func configureCells() {
-        let cells = [firstHobbyCell, secondHobbyCell, thirdHobbyCell, fourthHobbyCell]
+private extension HobbyView {
+    func designSquare() {
+        let cells = [firstSquareCell, secondSquareCell, thirdSquareCell, fourthSquareCell]
         cells.forEach { cell in
             cell.layer.cornerRadius = 16
         }
     }
 }
+
+extension HobbyView {
+    func setHobbies(_ hobbies: [HobbyStruct]) {
+        let cells = [firstSquareCell, secondSquareCell, thirdSquareCell, fourthSquareCell]
+        for (index, cell) in cells.enumerated() where index < hobbies.count {
+            let hobby = hobbies[index]
+            cell.configureText(hobbyTitle: HobbyEnum.InterfaceText.hobbyTitleLabel, personHobby: hobby.hobbyLabel, achivementTitle: HobbyEnum.InterfaceText.achivementTitleLabel, personAchivment: hobby.achivementLabel)
+        }
+    }
+}
+
 

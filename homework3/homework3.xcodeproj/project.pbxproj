@@ -10,7 +10,7 @@
 		C56841CF2BDBF1F600F5D29E /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56841CE2BDBF1F600F5D29E /* HobbyView.swift */; };
 		C56841D12BDBF2E600F5D29E /* HobbyEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56841D02BDBF2E600F5D29E /* HobbyEnum.swift */; };
 		C56841D32BDBF3CE00F5D29E /* HobbyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56841D22BDBF3CE00F5D29E /* HobbyStruct.swift */; };
-		C56841D72BDBF4AC00F5D29E /* HobbyCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56841D62BDBF4AC00F5D29E /* HobbyCellView.swift */; };
+		C56841D72BDBF4AC00F5D29E /* HobbySquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56841D62BDBF4AC00F5D29E /* HobbySquareView.swift */; };
 		C5A7E54F2BD9784D000AAA0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7E54E2BD9784D000AAA0A /* AppDelegate.swift */; };
 		C5A7E5512BD9784D000AAA0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7E5502BD9784D000AAA0A /* SceneDelegate.swift */; };
 		C5A7E5532BD9784D000AAA0A /* MainInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A7E5522BD9784D000AAA0A /* MainInfoViewController.swift */; };
@@ -22,9 +22,10 @@
 		C5C1D4992BD9A5CB0065A7DB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1D4982BD9A5CB0065A7DB /* TabBarController.swift */; };
 		C5C1D49B2BD9A8FC0065A7DB /* ItSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1D49A2BD9A8FC0065A7DB /* ItSkillsViewController.swift */; };
 		C5C1D49D2BD9A9400065A7DB /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1D49C2BD9A93F0065A7DB /* HobbyViewController.swift */; };
+		C5C592632BE3FC3D001C6570 /* StackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C592622BE3FC3D001C6570 /* StackFactory.swift */; };
 		C5FBCC262BDAC074003B4EF8 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FBCC252BDAC074003B4EF8 /* UIColor + Extensions.swift */; };
 		C5FBCC292BDAC3C8003B4EF8 /* ItSkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FBCC282BDAC3C8003B4EF8 /* ItSkillsView.swift */; };
-		C5FBCC2B2BDAC4F2003B4EF8 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FBCC2A2BDAC4F2003B4EF8 /* UILabel + Extensions.swift */; };
+		C5FBCC2B2BDAC4F2003B4EF8 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FBCC2A2BDAC4F2003B4EF8 /* LabelFactory.swift */; };
 		C5FBCC2E2BDAC807003B4EF8 /* ItSkillsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FBCC2D2BDAC807003B4EF8 /* ItSkillsEnum.swift */; };
 		C5FBCC312BDAC8EF003B4EF8 /* ItSkillsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FBCC302BDAC8EF003B4EF8 /* ItSkillsStruct.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +34,7 @@
 		C56841CE2BDBF1F600F5D29E /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
 		C56841D02BDBF2E600F5D29E /* HobbyEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyEnum.swift; sourceTree = "<group>"; };
 		C56841D22BDBF3CE00F5D29E /* HobbyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyStruct.swift; sourceTree = "<group>"; };
-		C56841D62BDBF4AC00F5D29E /* HobbyCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCellView.swift; sourceTree = "<group>"; };
+		C56841D62BDBF4AC00F5D29E /* HobbySquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbySquareView.swift; sourceTree = "<group>"; };
 		C5A7E54B2BD9784D000AAA0A /* homework3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A7E54E2BD9784D000AAA0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5A7E5502BD9784D000AAA0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,9 +48,10 @@
 		C5C1D4982BD9A5CB0065A7DB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C5C1D49A2BD9A8FC0065A7DB /* ItSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItSkillsViewController.swift; sourceTree = "<group>"; };
 		C5C1D49C2BD9A93F0065A7DB /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
+		C5C592622BE3FC3D001C6570 /* StackFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackFactory.swift; sourceTree = "<group>"; };
 		C5FBCC252BDAC074003B4EF8 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		C5FBCC282BDAC3C8003B4EF8 /* ItSkillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItSkillsView.swift; sourceTree = "<group>"; };
-		C5FBCC2A2BDAC4F2003B4EF8 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		C5FBCC2A2BDAC4F2003B4EF8 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		C5FBCC2D2BDAC807003B4EF8 /* ItSkillsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItSkillsEnum.swift; sourceTree = "<group>"; };
 		C5FBCC302BDAC8EF003B4EF8 /* ItSkillsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItSkillsStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				C56841CE2BDBF1F600F5D29E /* HobbyView.swift */,
-				C56841D62BDBF4AC00F5D29E /* HobbyCellView.swift */,
+				C56841D62BDBF4AC00F5D29E /* HobbySquareView.swift */,
 			);
 			name = Hobby;
 			sourceTree = "<group>";
@@ -206,8 +208,9 @@
 		C5FBCC272BDAC15B003B4EF8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C5FBCC2A2BDAC4F2003B4EF8 /* LabelFactory.swift */,
+				C5C592622BE3FC3D001C6570 /* StackFactory.swift */,
 				C5FBCC252BDAC074003B4EF8 /* UIColor + Extensions.swift */,
-				C5FBCC2A2BDAC4F2003B4EF8 /* UILabel + Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -302,12 +305,12 @@
 			files = (
 				C56841D12BDBF2E600F5D29E /* HobbyEnum.swift in Sources */,
 				C5C1D49B2BD9A8FC0065A7DB /* ItSkillsViewController.swift in Sources */,
-				C5FBCC2B2BDAC4F2003B4EF8 /* UILabel + Extensions.swift in Sources */,
+				C5FBCC2B2BDAC4F2003B4EF8 /* LabelFactory.swift in Sources */,
 				C5A7E5532BD9784D000AAA0A /* MainInfoViewController.swift in Sources */,
 				C5FBCC312BDAC8EF003B4EF8 /* ItSkillsStruct.swift in Sources */,
 				C56841D32BDBF3CE00F5D29E /* HobbyStruct.swift in Sources */,
 				C5A7E54F2BD9784D000AAA0A /* AppDelegate.swift in Sources */,
-				C56841D72BDBF4AC00F5D29E /* HobbyCellView.swift in Sources */,
+				C56841D72BDBF4AC00F5D29E /* HobbySquareView.swift in Sources */,
 				C56841CF2BDBF1F600F5D29E /* HobbyView.swift in Sources */,
 				C5C1D4952BD9A2260065A7DB /* MainViewStruct.swift in Sources */,
 				C5FBCC2E2BDAC807003B4EF8 /* ItSkillsEnum.swift in Sources */,
@@ -315,6 +318,7 @@
 				C5C1D4912BD99EC90065A7DB /* MainViewEnum.swift in Sources */,
 				C5FBCC262BDAC074003B4EF8 /* UIColor + Extensions.swift in Sources */,
 				C5FBCC292BDAC3C8003B4EF8 /* ItSkillsView.swift in Sources */,
+				C5C592632BE3FC3D001C6570 /* StackFactory.swift in Sources */,
 				C5A7E5512BD9784D000AAA0A /* SceneDelegate.swift in Sources */,
 				C5C1D49D2BD9A9400065A7DB /* HobbyViewController.swift in Sources */,
 			);

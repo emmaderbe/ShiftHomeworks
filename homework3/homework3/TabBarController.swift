@@ -13,8 +13,8 @@ class TabBarController: UITabBarController {
     }
 }
 
-extension TabBarController {
-    private func setupTabBar() {
+private extension TabBarController {
+    func setupTabBar() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainView = storyboard.instantiateViewController(withIdentifier: "MainInfoViewController") as! MainInfoViewController
         
@@ -26,8 +26,8 @@ extension TabBarController {
     }
 }
 
-extension TabBarController {
-    private func createNav(with title: String,
+private extension TabBarController {
+    func createNav(with title: String,
                            and image: UIImage?,
                            vc: UIViewController) -> UIViewController {
         vc.tabBarItem.title = title
@@ -36,8 +36,8 @@ extension TabBarController {
     }
 }
 
-extension TabBarController {
-    private func setupAppearance() {
+private extension TabBarController {
+    func setupAppearance() {
         tabBar.backgroundColor = .white
         tabBar.tintColor = .systemBrown
         tabBar.unselectedItemTintColor = .systemGray2

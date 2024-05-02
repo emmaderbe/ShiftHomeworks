@@ -1,13 +1,13 @@
 import UIKit
 
 class ItSkillsView: UIView {    
-    let experienceTitleLabel = UILabel.createTitleLabel()
-    let experienceLabel = UILabel.createOrdinaryLabel()
-    let expectationsTitleLabel = UILabel.createTitleLabel()
-    let expectationsLabel = UILabel.createOrdinaryLabel()
-    let jokeTitleLabel = UILabel.createTitleLabel()
+    private let experienceTitleLabel = LabelFactory.createTitleLabel()
+    private let experienceLabel = LabelFactory.createOrdinaryLabel()
+    private let expectationsTitleLabel = LabelFactory.createTitleLabel()
+    private let expectationsLabel = LabelFactory.createOrdinaryLabel()
+    private let jokeTitleLabel = LabelFactory.createTitleLabel()
     
-    let jokeImage: UIImageView = {
+    private let jokeImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
@@ -25,14 +25,7 @@ class ItSkillsView: UIView {
         return scrollView
     }()
     
-    private let stackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 15
-        stack.alignment = .fill
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
+    private let stackView = StackFactory.createVerticalStack()
     
     override init(frame: CGRect) {
         super.init(frame: frame )
@@ -40,13 +33,14 @@ class ItSkillsView: UIView {
         setupConstraints()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension ItSkillsView {
-    private func setupView() {
+private extension ItSkillsView {
+    func setupView() {
         backgroundColor = .white
         addSubview(scrollView)
         scrollView.addSubview(stackView)
@@ -60,13 +54,13 @@ extension ItSkillsView {
     }
 }
 
-extension ItSkillsView {
-    private func setupConstraints() {
+private extension ItSkillsView {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -15),
+            scrollView.topAnchor.constraint(equalTo: topAnchor, constant: ItSkillsEnum.ViewConstraints.topConst),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ItSkillsEnum.ViewConstraints.leadingConst),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ItSkillsEnum.ViewConstraints.trailingConst),
+            scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: ItSkillsEnum.ViewConstraints.bottomConst),
             
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -76,6 +70,24 @@ extension ItSkillsView {
             
             jokeImage.heightAnchor.constraint(equalTo: jokeImage.widthAnchor)
         ])
+    }
+}
+
+extension ItSkillsView {
+    func configureText(experienceTitle: String, 
+                       personExperience: String,
+                       expectationsTitle: String,
+                       personExpectations: String,
+                       jokeTitle: String) {
+        experienceTitleLabel.text = experienceTitle
+        experienceLabel.text = personExperience
+        expectationsTitleLabel.text = expectationsTitle
+        expectationsLabel.text = personExpectations
+        jokeTitleLabel.text = jokeTitle
+    }
+    
+    func configureImage(image: String) {
+        jokeImage.image = UIImage(named: image)
     }
 }
 

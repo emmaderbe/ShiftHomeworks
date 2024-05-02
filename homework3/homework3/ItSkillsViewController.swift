@@ -17,37 +17,35 @@ class ItSkillsViewController: UIViewController {
     }
 }
 
-extension ItSkillsViewController {
-    private func setupView() {
+private extension ItSkillsViewController {
+    func setupView() {
         view.backgroundColor = .accentBackground
         view.addSubview(itSkillsView)
         itSkillsView.layer.cornerRadius = 16
-        itSkillsView.jokeImage.image = UIImage(named: itSkillsStruct.jokeImage)
+        itSkillsView.configureImage(image: itSkillsStruct.jokeImage)
         setupText()
     }
 }
 
-extension ItSkillsViewController {
-    private func setupText() {
-        itSkillsView.experienceTitleLabel.text = ItSkillsEnum.experienceTitleLabel.rawValue
-        itSkillsView.expectationsTitleLabel.text = ItSkillsEnum.expectationsTitleLabel.rawValue
-        itSkillsView.expectationsTitleLabel.text = ItSkillsEnum.expectationsTitleLabel.rawValue
-        itSkillsView.jokeTitleLabel.text = ItSkillsEnum.jokeTitleLabel.rawValue
-        
-        itSkillsView.experienceLabel.text = itSkillsStruct.experienceLabel
-        itSkillsView.expectationsLabel.text = itSkillsStruct.expectationsLabel
+private extension ItSkillsViewController {
+    func setupText() {
+        itSkillsView.configureText(experienceTitle: ItSkillsEnum.InterfaceText.experienceTitleLabel, 
+                                   personExperience: itSkillsStruct.experienceLabel,
+                                   expectationsTitle: ItSkillsEnum.InterfaceText.expectationsTitleLabel,
+                                   personExpectations: itSkillsStruct.expectationsLabel,
+                                   jokeTitle: ItSkillsEnum.InterfaceText.jokeTitleLabel)
     }
 }
 
-extension ItSkillsViewController {
-    private func setupConstraints() {
+private extension ItSkillsViewController {
+    func setupConstraints() {
         itSkillsView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            itSkillsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            itSkillsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            itSkillsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            itSkillsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            itSkillsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ItSkillsEnum.ViewControllerConstraints.topConst),
+            itSkillsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: ItSkillsEnum.ViewControllerConstraints.leadingConst),
+            itSkillsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: ItSkillsEnum.ViewControllerConstraints.trailingConst),
+            itSkillsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: ItSkillsEnum.ViewControllerConstraints.bottomConst)
         ])
     }
 }
