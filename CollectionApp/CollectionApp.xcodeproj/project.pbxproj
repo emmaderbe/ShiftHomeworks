@@ -9,19 +9,37 @@
 /* Begin PBXBuildFile section */
 		C5498C872BEA738200CBCA32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498C862BEA738200CBCA32 /* AppDelegate.swift */; };
 		C5498C892BEA738200CBCA32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498C882BEA738200CBCA32 /* SceneDelegate.swift */; };
-		C5498C8B2BEA738200CBCA32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498C8A2BEA738200CBCA32 /* ViewController.swift */; };
+		C5498C8B2BEA738200CBCA32 /* DogListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498C8A2BEA738200CBCA32 /* DogListViewController.swift */; };
 		C5498C902BEA738400CBCA32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5498C8F2BEA738400CBCA32 /* Assets.xcassets */; };
 		C5498C932BEA738400CBCA32 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C5498C922BEA738400CBCA32 /* Base */; };
+		C5498C9E2BEA876700CBCA32 /* DogListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498C9D2BEA876600CBCA32 /* DogListCollectionViewCell.swift */; };
+		C5498CA12BEA88A600CBCA32 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498CA02BEA88A600CBCA32 /* LabelFactory.swift */; };
+		C5498CA42BEA890800CBCA32 /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498CA32BEA890800CBCA32 /* ImageFactory.swift */; };
+		C5498CA72BEA8EB500CBCA32 /* DogListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498CA62BEA8EB500CBCA32 /* DogListData.swift */; };
+		C5498CA92BEA910700CBCA32 /* StackFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498CA82BEA910700CBCA32 /* StackFactory.swift */; };
+		C5498CAC2BEA95C900CBCA32 /* DogListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498CAB2BEA95C900CBCA32 /* DogListCollectionView.swift */; };
+		C5498CAE2BEA968500CBCA32 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498CAD2BEA968500CBCA32 /* DataSource.swift */; };
+		C5498CB12BEAA21800CBCA32 /* DogListCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5498CB02BEAA21800CBCA32 /* DogListCollectionDataSource.swift */; };
+		C5ABE0662BEBC5BD00452080 /* DogListCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE0652BEBC5BD00452080 /* DogListCollectionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C5498C832BEA738200CBCA32 /* CollectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5498C862BEA738200CBCA32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5498C882BEA738200CBCA32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C5498C8A2BEA738200CBCA32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C5498C8A2BEA738200CBCA32 /* DogListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewController.swift; sourceTree = "<group>"; };
 		C5498C8F2BEA738400CBCA32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5498C922BEA738400CBCA32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5498C942BEA738400CBCA32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5498C9D2BEA876600CBCA32 /* DogListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListCollectionViewCell.swift; sourceTree = "<group>"; };
+		C5498CA02BEA88A600CBCA32 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
+		C5498CA32BEA890800CBCA32 /* ImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFactory.swift; sourceTree = "<group>"; };
+		C5498CA62BEA8EB500CBCA32 /* DogListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListData.swift; sourceTree = "<group>"; };
+		C5498CA82BEA910700CBCA32 /* StackFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackFactory.swift; sourceTree = "<group>"; };
+		C5498CAB2BEA95C900CBCA32 /* DogListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListCollectionView.swift; sourceTree = "<group>"; };
+		C5498CAD2BEA968500CBCA32 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		C5498CB02BEAA21800CBCA32 /* DogListCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListCollectionDataSource.swift; sourceTree = "<group>"; };
+		C5ABE0652BEBC5BD00452080 /* DogListCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListCollectionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +73,12 @@
 			isa = PBXGroup;
 			children = (
 				C5498C9A2BEA746800CBCA32 /* Application */,
+				C5498CAF2BEAA1EC00CBCA32 /* DataSource */,
+				C5ABE0642BEBC39B00452080 /* Delegate */,
+				C5498CA52BEA8E8E00CBCA32 /* Model */,
+				C5498C9F2BEA878200CBCA32 /* View */,
 				C5498C9B2BEA751000CBCA32 /* ViewController */,
+				C5498CA22BEA88C400CBCA32 /* Extensions */,
 				C5498C9C2BEA751E00CBCA32 /* Resourses */,
 				C5498C942BEA738400CBCA32 /* Info.plist */,
 			);
@@ -74,7 +97,7 @@
 		C5498C9B2BEA751000CBCA32 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C5498C8A2BEA738200CBCA32 /* ViewController.swift */,
+				C5498C8A2BEA738200CBCA32 /* DogListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -86,6 +109,58 @@
 				C5498C8F2BEA738400CBCA32 /* Assets.xcassets */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		C5498C9F2BEA878200CBCA32 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5498CAA2BEA959400CBCA32 /* NobelList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5498CA22BEA88C400CBCA32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C5498CA02BEA88A600CBCA32 /* LabelFactory.swift */,
+				C5498CA32BEA890800CBCA32 /* ImageFactory.swift */,
+				C5498CA82BEA910700CBCA32 /* StackFactory.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C5498CA52BEA8E8E00CBCA32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5498CA62BEA8EB500CBCA32 /* DogListData.swift */,
+				C5498CAD2BEA968500CBCA32 /* DataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5498CAA2BEA959400CBCA32 /* NobelList */ = {
+			isa = PBXGroup;
+			children = (
+				C5498CAB2BEA95C900CBCA32 /* DogListCollectionView.swift */,
+				C5498C9D2BEA876600CBCA32 /* DogListCollectionViewCell.swift */,
+			);
+			path = NobelList;
+			sourceTree = "<group>";
+		};
+		C5498CAF2BEAA1EC00CBCA32 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				C5498CB02BEAA21800CBCA32 /* DogListCollectionDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		C5ABE0642BEBC39B00452080 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE0652BEBC5BD00452080 /* DogListCollectionDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +233,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5498C8B2BEA738200CBCA32 /* ViewController.swift in Sources */,
+				C5498CA42BEA890800CBCA32 /* ImageFactory.swift in Sources */,
+				C5498C8B2BEA738200CBCA32 /* DogListViewController.swift in Sources */,
+				C5498C9E2BEA876700CBCA32 /* DogListCollectionViewCell.swift in Sources */,
+				C5498CA92BEA910700CBCA32 /* StackFactory.swift in Sources */,
 				C5498C872BEA738200CBCA32 /* AppDelegate.swift in Sources */,
+				C5498CB12BEAA21800CBCA32 /* DogListCollectionDataSource.swift in Sources */,
+				C5498CAC2BEA95C900CBCA32 /* DogListCollectionView.swift in Sources */,
+				C5498CA12BEA88A600CBCA32 /* LabelFactory.swift in Sources */,
 				C5498C892BEA738200CBCA32 /* SceneDelegate.swift in Sources */,
+				C5498CAE2BEA968500CBCA32 /* DataSource.swift in Sources */,
+				C5498CA72BEA8EB500CBCA32 /* DogListData.swift in Sources */,
+				C5ABE0662BEBC5BD00452080 /* DogListCollectionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
