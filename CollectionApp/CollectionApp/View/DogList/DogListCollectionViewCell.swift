@@ -1,5 +1,6 @@
 import UIKit
 
+//MARK: - Property and init
 final class DogListCollectionViewCell: UICollectionViewCell {
     
     private lazy var godImage = ImageFactory.createRoundImage()
@@ -18,10 +19,11 @@ final class DogListCollectionViewCell: UICollectionViewCell {
     }
 }
 
+//MARK: - setup UI
 private extension DogListCollectionViewCell {
     func setupCell() {
         backgroundColor = .white
-        layer.cornerRadius = 16
+        layer.cornerRadius = UIEnums.DogListCell.cornerRadius
         
         addSubview(verticalStack)
         
@@ -31,10 +33,10 @@ private extension DogListCollectionViewCell {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            verticalStack.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            verticalStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            verticalStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            verticalStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            verticalStack.topAnchor.constraint(equalTo: topAnchor, constant: UIEnums.DogListCell.top),
+            verticalStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: UIEnums.DogListCell.leading),
+            verticalStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: UIEnums.DogListCell.trailing),
+            verticalStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: UIEnums.DogListCell.bottom),
             
             godImage.widthAnchor.constraint(equalTo: godImage.heightAnchor),
         ])
@@ -42,6 +44,7 @@ private extension DogListCollectionViewCell {
     
 }
 
+//MARK: - configure cell
 extension DogListCollectionViewCell {
     func configure(with data: DogListData) {
         godImage.image = UIImage(named: data.dogImage)
@@ -49,6 +52,7 @@ extension DogListCollectionViewCell {
     }
 }
 
+//MARK: - sidentifier of cell
 extension DogListCollectionViewCell {
     static var identifier: String {
         String(describing: DogListCollectionViewCell.self)

@@ -1,5 +1,6 @@
 import UIKit
 
+//MARK: - Properties
 class DogListViewController: UIViewController {
     let dataSource = DogListCollectionDataSource()
     let delegate = DogListCollectionDelegate()
@@ -11,6 +12,7 @@ class DogListViewController: UIViewController {
         return view
     }()
     
+//MARK: - vc lifecycle
     override func loadView() {
         view = contentView
     }
@@ -20,6 +22,5 @@ class DogListViewController: UIViewController {
         view.backgroundColor = .systemGray5
         delegate.navigationController = navigationController
     }
-
 }
 

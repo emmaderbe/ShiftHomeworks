@@ -1,7 +1,7 @@
 import UIKit
 
+//MARK: - Property and init
 class DogListCollectionView: UIView {
-
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
         collectionView.isUserInteractionEnabled = true
@@ -23,6 +23,7 @@ class DogListCollectionView: UIView {
     }
 }
 
+//MARK: - setup UI
 private extension DogListCollectionView {
     func setupView() {
         addSubview(collectionView)
@@ -39,6 +40,7 @@ private extension DogListCollectionView {
     }
 }
 
+//MARK: - create Layout
 private extension DogListCollectionView {
     func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
@@ -52,11 +54,11 @@ private extension DogListCollectionView {
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.3))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-        group.interItemSpacing = .fixed(16)
+        group.interItemSpacing = .fixed(UIEnums.DogListCollectionView.spacing)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 16
-        section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 16)
+        section.interGroupSpacing = UIEnums.DogListCollectionView.spacing
+        section.contentInsets = .init(top: UIEnums.DogListCollectionView.sectionTop, leading: UIEnums.DogListCollectionView.sectionLeading, bottom: UIEnums.DogListCollectionView.sectionBottom, trailing: UIEnums.DogListCollectionView.sectionTrailing)
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         
@@ -64,6 +66,7 @@ private extension DogListCollectionView {
     }
 }
 
+//MARK: - set dataSource and delegate
 extension DogListCollectionView {
     func setDataSource(_ dataSource: DogListCollectionDataSource) {
         collectionView.dataSource = dataSource

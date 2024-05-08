@@ -1,12 +1,14 @@
 import Foundation
 
+//MARK: - create Singleton
 final class DataSource {
-    static let shated = DataSource()
-    
+    static let shared = DataSource()
     var dogListData: [DogListData] = DataSource.createData()
-    
     private init() {}
-    
+}
+
+//MARK: - create data
+private extension DataSource {
     static func createData() -> [DogListData] {
         return [
             DogListData(dogImage: "1",

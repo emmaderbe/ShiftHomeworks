@@ -1,5 +1,6 @@
 import UIKit
 
+//MARK: - Properties and init
 class DetailView: UIView {
     
     private lazy var dogImage = ImageFactory.createRoundImage()
@@ -9,9 +10,9 @@ class DetailView: UIView {
     
     private lazy var openMoreButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Подробнее", for: .normal)
+        button.setTitle(StringEnums.buttonTitle, for: .normal)
         button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = UIEnums.DetailView.cornerRadius
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -32,6 +33,7 @@ class DetailView: UIView {
     
 }
 
+//MARK: - setup UI
 private extension DetailView {
     func setupView() {
         addSubview(stackView)
@@ -44,13 +46,13 @@ private extension DetailView {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: UIEnums.DetailView.top),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: UIEnums.DetailView.leading),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: UIEnums.DetailView.trailing),
             
-            openMoreButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
+            openMoreButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: UIEnums.DetailView.bttnTop),
             openMoreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            openMoreButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.4),
+            openMoreButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: UIEnums.DetailView.bttnWight),
             
             dogImage.widthAnchor.constraint(equalTo: dogImage.heightAnchor),
             
@@ -58,13 +60,17 @@ private extension DetailView {
     }
 }
 
+//MARK: - configure view
 extension DetailView {
     func configure(with data: DogListData) {
         dogImage.image = UIImage(named: data.dogImage)
         breedNameLabel.text = data.breedName
         shortDescriptionLabel.text = data.shortDescription
     }
-    
+}
+
+//MARK: - button pressed
+private extension DetailView {
     @objc func buttonPressed() {
         buttonPressedHandler?()
     }

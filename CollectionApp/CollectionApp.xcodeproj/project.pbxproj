@@ -23,6 +23,8 @@
 		C5ABE0662BEBC5BD00452080 /* DogListCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE0652BEBC5BD00452080 /* DogListCollectionDelegate.swift */; };
 		C5ABE0682BEBCEE500452080 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE0672BEBCEE500452080 /* DetailView.swift */; };
 		C5ABE06A2BEBCEF900452080 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE0692BEBCEF900452080 /* DetailViewController.swift */; };
+		C5ABE06F2BEBFAA500452080 /* StringEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE06E2BEBFAA500452080 /* StringEnums.swift */; };
+		C5ABE0712BEBFB8500452080 /* UIEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE0702BEBFB8500452080 /* UIEnums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		C5ABE0652BEBC5BD00452080 /* DogListCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListCollectionDelegate.swift; sourceTree = "<group>"; };
 		C5ABE0672BEBCEE500452080 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C5ABE0692BEBCEF900452080 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C5ABE06E2BEBFAA500452080 /* StringEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnums.swift; sourceTree = "<group>"; };
+		C5ABE0702BEBFB8500452080 /* UIEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEnums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				C5498C9A2BEA746800CBCA32 /* Application */,
+				C5ABE06C2BEBFA6700452080 /* Enums */,
 				C5498CAF2BEAA1EC00CBCA32 /* DataSource */,
 				C5ABE0642BEBC39B00452080 /* Delegate */,
 				C5498CA52BEA8E8E00CBCA32 /* Model */,
@@ -177,6 +182,15 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		C5ABE06C2BEBFA6700452080 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE06E2BEBFAA500452080 /* StringEnums.swift */,
+				C5ABE0702BEBFB8500452080 /* UIEnums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,11 +268,13 @@
 				C5498C872BEA738200CBCA32 /* AppDelegate.swift in Sources */,
 				C5498CB12BEAA21800CBCA32 /* DogListCollectionDataSource.swift in Sources */,
 				C5498CAC2BEA95C900CBCA32 /* DogListCollectionView.swift in Sources */,
+				C5ABE06F2BEBFAA500452080 /* StringEnums.swift in Sources */,
 				C5ABE0682BEBCEE500452080 /* DetailView.swift in Sources */,
 				C5498CA12BEA88A600CBCA32 /* LabelFactory.swift in Sources */,
 				C5498C892BEA738200CBCA32 /* SceneDelegate.swift in Sources */,
 				C5498CAE2BEA968500CBCA32 /* DataSource.swift in Sources */,
 				C5498CA72BEA8EB500CBCA32 /* DogListData.swift in Sources */,
+				C5ABE0712BEBFB8500452080 /* UIEnums.swift in Sources */,
 				C5ABE0662BEBC5BD00452080 /* DogListCollectionDelegate.swift in Sources */,
 				C5ABE06A2BEBCEF900452080 /* DetailViewController.swift in Sources */,
 			);
