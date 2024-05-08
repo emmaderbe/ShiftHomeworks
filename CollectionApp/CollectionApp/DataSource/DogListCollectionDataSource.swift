@@ -3,7 +3,6 @@ import Foundation
 import UIKit
 
 final class DogListCollectionDataSource: NSObject, UICollectionViewDataSource {
-    
     var createdData = DataSource.createData()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

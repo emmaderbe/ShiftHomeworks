@@ -18,6 +18,7 @@ class DogListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray5
+        delegate.navigationController = navigationController
     }
 
 }

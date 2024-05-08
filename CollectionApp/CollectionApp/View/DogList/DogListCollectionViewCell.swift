@@ -2,9 +2,9 @@ import UIKit
 
 final class DogListCollectionViewCell: UICollectionViewCell {
     
-    private let godImage = ImageFactory.createRoundImage()
-    private let breedNameLabel = LabelFactory.createTitleLabel()
-    private let verticalStack = StackFactory.createVerticalStack()
+    private lazy var godImage = ImageFactory.createRoundImage()
+    private lazy var breedNameLabel = LabelFactory.createTitleLabel()
+    private lazy var verticalStack = StackFactory.createVerticalStack()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
