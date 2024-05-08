@@ -2,7 +2,7 @@ import UIKit
 
 final class DogListCollectionDelegate: NSObject, UICollectionViewDelegate {
     var navigationController: UINavigationController?
-    var createdData = DataSource.createData()
+    private lazy var createdData = DataSource.createData()
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
