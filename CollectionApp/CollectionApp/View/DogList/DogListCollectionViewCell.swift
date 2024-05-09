@@ -5,7 +5,6 @@ final class DogListCollectionViewCell: UICollectionViewCell {
     
     private lazy var godImage = ImageFactory.createRoundImage()
     private lazy var breedNameLabel = LabelFactory.createTitleLabel()
-    private lazy var verticalStack = StackFactory.createVerticalStack()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,6 +16,11 @@ final class DogListCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        godImage.layer.cornerRadius = godImage.bounds.height / 2
+    }
 }
 
 //MARK: - setup UI
@@ -25,20 +29,20 @@ private extension DogListCollectionViewCell {
         backgroundColor = .white
         layer.cornerRadius = UIEnums.DogListCell.cornerRadius
         
-        addSubview(verticalStack)
-        
-        verticalStack.addArrangedSubview(godImage)
-        verticalStack.addArrangedSubview(breedNameLabel)
+        addSubview(godImage)
+        addSubview(breedNameLabel)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            verticalStack.topAnchor.constraint(equalTo: topAnchor, constant: UIEnums.DogListCell.top),
-            verticalStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: UIEnums.DogListCell.leading),
-            verticalStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: UIEnums.DogListCell.trailing),
-            verticalStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: UIEnums.DogListCell.bottom),
+            godImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            godImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: UIEnums.DogListCell.leading),
+            godImage.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.9),
+            godImage.heightAnchor.constraint(equalTo: godImage.widthAnchor),
             
-            godImage.widthAnchor.constraint(equalTo: godImage.heightAnchor),
+            breedNameLabel.centerYAnchor.constraint(equalTo: godImage.centerYAnchor),
+            breedNameLabel.leadingAnchor.constraint(equalTo: godImage.trailingAnchor, constant: UIEnums.DogListCell.leading),
+            breedNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: UIEnums.DogListCell.trailing),
         ])
     }
     

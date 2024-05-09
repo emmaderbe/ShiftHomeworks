@@ -23,6 +23,7 @@ enum UIEnums {
         static let top: CGFloat = 16
         static let leading: CGFloat = 16
         static let trailing: CGFloat = -16
+        static let bottom: CGFloat = -16
         static let bttnTop: CGFloat = 30
         static let bttnWight: CGFloat = 0.4
     }

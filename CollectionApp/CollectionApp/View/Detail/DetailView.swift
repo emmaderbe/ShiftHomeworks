@@ -31,6 +31,10 @@ class DetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateDogImageConstraints()
+    }
 }
 
 //MARK: - setup UI
@@ -47,16 +51,20 @@ private extension DetailView {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: UIEnums.DetailView.top),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: UIEnums.DetailView.leading),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: UIEnums.DetailView.trailing),
+            stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: UIEnums.DetailView.leading),
+            stackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: UIEnums.DetailView.trailing),
             
             openMoreButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: UIEnums.DetailView.bttnTop),
             openMoreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             openMoreButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: UIEnums.DetailView.bttnWight),
             
-            dogImage.widthAnchor.constraint(equalTo: dogImage.heightAnchor),
-            
+            dogImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
         ])
+    }
+    
+    private func updateDogImageConstraints() {
+        let dogImageHeight = UIScreen.main.bounds.height * 0.3
+        dogImage.layer.cornerRadius = dogImageHeight / 2
     }
 }
 
