@@ -2,8 +2,8 @@ import UIKit
 
 //MARK: - Properties
 class DogListViewController: UIViewController {
-    let dataSource = DogListCollectionDataSource()
-    let delegate = DogListCollectionDelegate()
+    private let  dataSource = DogListCollectionDataSource()
+    private let delegate = DogListCollectionDelegate()
     
     private lazy var contentView: DogListCollectionView = {
         let view = DogListCollectionView()
@@ -20,7 +20,15 @@ class DogListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray5
-        delegate.navigationController = navigationController
+        delegate.delegate = self
+    }
+}
+
+extension DogListViewController: DogSelectionDelegate {
+    func dogSelected(_ dog: DogListData) {
+        let detailVC = DetailViewController()
+        detailVC.selectedDog = dog
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
