@@ -40,6 +40,7 @@ class DetailView: UIView {
 //MARK: - setup UI
 private extension DetailView {
     func setupView() {
+        backgroundColor = .systemGray5
         addSubview(stackView)
         stackView.addArrangedSubview(dogImage)
         stackView.addArrangedSubview(breedNameLabel)
@@ -70,10 +71,16 @@ private extension DetailView {
 
 //MARK: - configure view
 extension DetailView {
-    func configure(with data: DogListData) {
-        dogImage.image = UIImage(named: data.dogImage)
-        breedNameLabel.text = data.breedName
-        shortDescriptionLabel.text = data.shortDescription
+    func configureImage(with data: String) {
+        dogImage.image = UIImage(named: data)
+    }
+    
+    func configureBreedName(with data: String) {
+        breedNameLabel.text = data
+    }
+    
+    func configureDescription(with data: String) {
+        shortDescriptionLabel.text = data
     }
 }
 

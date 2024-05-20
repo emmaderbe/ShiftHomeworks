@@ -25,6 +25,7 @@
 		C5ABE06A2BEBCEF900452080 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE0692BEBCEF900452080 /* DetailViewController.swift */; };
 		C5ABE06F2BEBFAA500452080 /* StringEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE06E2BEBFAA500452080 /* StringEnums.swift */; };
 		C5ABE0712BEBFB8500452080 /* UIEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE0702BEBFB8500452080 /* UIEnums.swift */; };
+		C5D5F07F2BFBA92D00E61661 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D5F07E2BFBA92D00E61661 /* DetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C5ABE0692BEBCEF900452080 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C5ABE06E2BEBFAA500452080 /* StringEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnums.swift; sourceTree = "<group>"; };
 		C5ABE0702BEBFB8500452080 /* UIEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEnums.swift; sourceTree = "<group>"; };
+		C5D5F07E2BFBA92D00E61661 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,11 +84,9 @@
 			children = (
 				C5498C9A2BEA746800CBCA32 /* Application */,
 				C5ABE06C2BEBFA6700452080 /* Enums */,
-				C5498CAF2BEAA1EC00CBCA32 /* DataSource */,
-				C5ABE0642BEBC39B00452080 /* Delegate */,
-				C5498CA52BEA8E8E00CBCA32 /* Model */,
-				C5498C9F2BEA878200CBCA32 /* View */,
-				C5498C9B2BEA751000CBCA32 /* ViewController */,
+				C5498CA52BEA8E8E00CBCA32 /* MainModel */,
+				C5D5F0732BFB9CE300E61661 /* DogListScreen */,
+				C5D5F0772BFB9D7200E61661 /* DetailScreen */,
 				C5498CA22BEA88C400CBCA32 /* Extensions */,
 				C5498C9C2BEA751E00CBCA32 /* Resourses */,
 				C5498C942BEA738400CBCA32 /* Info.plist */,
@@ -103,15 +103,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		C5498C9B2BEA751000CBCA32 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C5498C8A2BEA738200CBCA32 /* DogListViewController.swift */,
-				C5ABE0692BEBCEF900452080 /* DetailViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		C5498C9C2BEA751E00CBCA32 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,15 +110,6 @@
 				C5498C8F2BEA738400CBCA32 /* Assets.xcassets */,
 			);
 			path = Resourses;
-			sourceTree = "<group>";
-		};
-		C5498C9F2BEA878200CBCA32 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C5498CAA2BEA959400CBCA32 /* DogList */,
-				C5ABE06B2BEBCF0F00452080 /* Detail */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C5498CA22BEA88C400CBCA32 /* Extensions */ = {
@@ -140,46 +122,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C5498CA52BEA8E8E00CBCA32 /* Model */ = {
+		C5498CA52BEA8E8E00CBCA32 /* MainModel */ = {
 			isa = PBXGroup;
 			children = (
 				C5498CA62BEA8EB500CBCA32 /* DogListData.swift */,
-				C5498CAD2BEA968500CBCA32 /* DataSource.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C5498CAA2BEA959400CBCA32 /* DogList */ = {
-			isa = PBXGroup;
-			children = (
-				C5498CAB2BEA95C900CBCA32 /* DogListCollectionView.swift */,
-				C5498C9D2BEA876600CBCA32 /* DogListCollectionViewCell.swift */,
-			);
-			path = DogList;
-			sourceTree = "<group>";
-		};
-		C5498CAF2BEAA1EC00CBCA32 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				C5498CB02BEAA21800CBCA32 /* DogListCollectionDataSource.swift */,
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
-		C5ABE0642BEBC39B00452080 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				C5ABE0652BEBC5BD00452080 /* DogListCollectionDelegate.swift */,
-			);
-			path = Delegate;
-			sourceTree = "<group>";
-		};
-		C5ABE06B2BEBCF0F00452080 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				C5ABE0672BEBCEE500452080 /* DetailView.swift */,
-			);
-			path = Detail;
+			path = MainModel;
 			sourceTree = "<group>";
 		};
 		C5ABE06C2BEBFA6700452080 /* Enums */ = {
@@ -189,6 +137,85 @@
 				C5ABE0702BEBFB8500452080 /* UIEnums.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		C5D5F0732BFB9CE300E61661 /* DogListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F0742BFB9CF600E61661 /* Model */,
+				C5D5F0752BFB9CFC00E61661 /* View */,
+				C5D5F0762BFB9D0100E61661 /* Controller */,
+			);
+			path = DogListScreen;
+			sourceTree = "<group>";
+		};
+		C5D5F0742BFB9CF600E61661 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5498CAD2BEA968500CBCA32 /* DataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5D5F0752BFB9CFC00E61661 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5498CAB2BEA95C900CBCA32 /* DogListCollectionView.swift */,
+				C5498C9D2BEA876600CBCA32 /* DogListCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5D5F0762BFB9D0100E61661 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5498C8A2BEA738200CBCA32 /* DogListViewController.swift */,
+				C5498CB02BEAA21800CBCA32 /* DogListCollectionDataSource.swift */,
+				C5ABE0652BEBC5BD00452080 /* DogListCollectionDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C5D5F0772BFB9D7200E61661 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F0792BFB9E3D00E61661 /* View */,
+				C5D5F07A2BFB9E4300E61661 /* Presenter */,
+			);
+			path = DetailScreen;
+			sourceTree = "<group>";
+		};
+		C5D5F0792BFB9E3D00E61661 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F07D2BFBA5B100E61661 /* ViewController */,
+				C5D5F07C2BFBA5A700E61661 /* View */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5D5F07A2BFB9E4300E61661 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F07E2BFBA92D00E61661 /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C5D5F07C2BFBA5A700E61661 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE0672BEBCEE500452080 /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5D5F07D2BFBA5B100E61661 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE0692BEBCEF900452080 /* DetailViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +304,7 @@
 				C5ABE0712BEBFB8500452080 /* UIEnums.swift in Sources */,
 				C5ABE0662BEBC5BD00452080 /* DogListCollectionDelegate.swift in Sources */,
 				C5ABE06A2BEBCEF900452080 /* DetailViewController.swift in Sources */,
+				C5D5F07F2BFBA92D00E61661 /* DetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
