@@ -1,7 +1,7 @@
 import UIKit
 
 protocol DogSelectionDelegate: AnyObject {
-    func dogSelected(_ dog: DogListData)
+    func dogSelected(_ dog: DogListData, at index: Int)
 }
 
 //MARK: - Properties
@@ -14,6 +14,6 @@ final class DogListCollectionDelegate: NSObject, UICollectionViewDelegate {
 extension DogListCollectionDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedDog = createdData.dogListData[indexPath.item]
-        delegate?.dogSelected(selectedDog)
+        delegate?.dogSelected(selectedDog, at: indexPath.row)
     }
 }

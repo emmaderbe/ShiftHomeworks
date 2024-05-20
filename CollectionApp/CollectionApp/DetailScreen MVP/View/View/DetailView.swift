@@ -1,8 +1,7 @@
 import UIKit
 
 //MARK: - Properties and init
-class DetailView: UIView {
-    
+class DetailView: UIView {   
     private lazy var dogImage = ImageFactory.createRoundImage()
     private lazy var breedNameLabel = LabelFactory.createTitleLabel()
     private lazy var shortDescriptionLabel = LabelFactory.createOrdinaryLabel()

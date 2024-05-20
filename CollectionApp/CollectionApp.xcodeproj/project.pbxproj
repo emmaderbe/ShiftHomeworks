@@ -26,6 +26,13 @@
 		C5ABE06F2BEBFAA500452080 /* StringEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE06E2BEBFAA500452080 /* StringEnums.swift */; };
 		C5ABE0712BEBFB8500452080 /* UIEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE0702BEBFB8500452080 /* UIEnums.swift */; };
 		C5D5F07F2BFBA92D00E61661 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D5F07E2BFBA92D00E61661 /* DetailPresenter.swift */; };
+		C5D5F0862BFBD12F00E61661 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D5F0852BFBD12F00E61661 /* InfoView.swift */; };
+		C5D5F08A2BFBD4DB00E61661 /* Info.json in Resources */ = {isa = PBXBuildFile; fileRef = C5D5F0882BFBD4DB00E61661 /* Info.json */; };
+		C5D5F08C2BFBD87F00E61661 /* InfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D5F08B2BFBD87F00E61661 /* InfoStruct.swift */; };
+		C5D5F08E2BFBD8D900E61661 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D5F08D2BFBD8D900E61661 /* NetworkService.swift */; };
+		C5D5F0902BFBD96200E61661 /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D5F08F2BFBD96200E61661 /* InfoManager.swift */; };
+		C5D5F0922BFBDA4100E61661 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D5F0912BFBDA4100E61661 /* InfoViewController.swift */; };
+		C5D5F0952BFBDC7900E61661 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D5F0942BFBDC7900E61661 /* InfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +57,13 @@
 		C5ABE06E2BEBFAA500452080 /* StringEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnums.swift; sourceTree = "<group>"; };
 		C5ABE0702BEBFB8500452080 /* UIEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEnums.swift; sourceTree = "<group>"; };
 		C5D5F07E2BFBA92D00E61661 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		C5D5F0852BFBD12F00E61661 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		C5D5F0892BFBD4DB00E61661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Info.json; sourceTree = "<group>"; };
+		C5D5F08B2BFBD87F00E61661 /* InfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoStruct.swift; sourceTree = "<group>"; };
+		C5D5F08D2BFBD8D900E61661 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C5D5F08F2BFBD96200E61661 /* InfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoManager.swift; sourceTree = "<group>"; };
+		C5D5F0912BFBDA4100E61661 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		C5D5F0942BFBDC7900E61661 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +99,9 @@
 				C5498C9A2BEA746800CBCA32 /* Application */,
 				C5ABE06C2BEBFA6700452080 /* Enums */,
 				C5498CA52BEA8E8E00CBCA32 /* MainModel */,
-				C5D5F0732BFB9CE300E61661 /* DogListScreen */,
-				C5D5F0772BFB9D7200E61661 /* DetailScreen */,
+				C5D5F0732BFB9CE300E61661 /* DogListScreen MVC */,
+				C5D5F0772BFB9D7200E61661 /* DetailScreen MVP */,
+				C5D5F0802BFBD04900E61661 /* InfoScreen MVVM */,
 				C5498CA22BEA88C400CBCA32 /* Extensions */,
 				C5498C9C2BEA751E00CBCA32 /* Resourses */,
 				C5498C942BEA738400CBCA32 /* Info.plist */,
@@ -108,6 +123,7 @@
 			children = (
 				C5498C912BEA738400CBCA32 /* LaunchScreen.storyboard */,
 				C5498C8F2BEA738400CBCA32 /* Assets.xcassets */,
+				C5D5F0882BFBD4DB00E61661 /* Info.json */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -139,14 +155,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		C5D5F0732BFB9CE300E61661 /* DogListScreen */ = {
+		C5D5F0732BFB9CE300E61661 /* DogListScreen MVC */ = {
 			isa = PBXGroup;
 			children = (
 				C5D5F0742BFB9CF600E61661 /* Model */,
 				C5D5F0752BFB9CFC00E61661 /* View */,
 				C5D5F0762BFB9D0100E61661 /* Controller */,
 			);
-			path = DogListScreen;
+			path = "DogListScreen MVC";
 			sourceTree = "<group>";
 		};
 		C5D5F0742BFB9CF600E61661 /* Model */ = {
@@ -176,13 +192,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		C5D5F0772BFB9D7200E61661 /* DetailScreen */ = {
+		C5D5F0772BFB9D7200E61661 /* DetailScreen MVP */ = {
 			isa = PBXGroup;
 			children = (
 				C5D5F0792BFB9E3D00E61661 /* View */,
 				C5D5F07A2BFB9E4300E61661 /* Presenter */,
 			);
-			path = DetailScreen;
+			path = "DetailScreen MVP";
 			sourceTree = "<group>";
 		};
 		C5D5F0792BFB9E3D00E61661 /* View */ = {
@@ -214,6 +230,59 @@
 			isa = PBXGroup;
 			children = (
 				C5ABE0692BEBCEF900452080 /* DetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C5D5F0802BFBD04900E61661 /* InfoScreen MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F0812BFBD08A00E61661 /* Model */,
+				C5D5F0822BFBD09600E61661 /* View */,
+				C5D5F0832BFBD09C00E61661 /* ViewModel */,
+			);
+			path = "InfoScreen MVVM";
+			sourceTree = "<group>";
+		};
+		C5D5F0812BFBD08A00E61661 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F08B2BFBD87F00E61661 /* InfoStruct.swift */,
+				C5D5F08D2BFBD8D900E61661 /* NetworkService.swift */,
+				C5D5F08F2BFBD96200E61661 /* InfoManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5D5F0822BFBD09600E61661 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F0932BFBDAC000E61661 /* ViewController */,
+				C5D5F0872BFBD28800E61661 /* View */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5D5F0832BFBD09C00E61661 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F0942BFBDC7900E61661 /* InfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C5D5F0872BFBD28800E61661 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F0852BFBD12F00E61661 /* InfoView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5D5F0932BFBDAC000E61661 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5F0912BFBDA4100E61661 /* InfoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -276,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D5F08A2BFBD4DB00E61661 /* Info.json in Resources */,
 				C5498C902BEA738400CBCA32 /* Assets.xcassets in Resources */,
 				C5498C932BEA738400CBCA32 /* Base in Resources */,
 			);
@@ -292,18 +362,24 @@
 				C5498C8B2BEA738200CBCA32 /* DogListViewController.swift in Sources */,
 				C5498C9E2BEA876700CBCA32 /* DogListCollectionViewCell.swift in Sources */,
 				C5498CA92BEA910700CBCA32 /* StackFactory.swift in Sources */,
+				C5D5F08C2BFBD87F00E61661 /* InfoStruct.swift in Sources */,
 				C5498C872BEA738200CBCA32 /* AppDelegate.swift in Sources */,
 				C5498CB12BEAA21800CBCA32 /* DogListCollectionDataSource.swift in Sources */,
 				C5498CAC2BEA95C900CBCA32 /* DogListCollectionView.swift in Sources */,
 				C5ABE06F2BEBFAA500452080 /* StringEnums.swift in Sources */,
 				C5ABE0682BEBCEE500452080 /* DetailView.swift in Sources */,
+				C5D5F08E2BFBD8D900E61661 /* NetworkService.swift in Sources */,
 				C5498CA12BEA88A600CBCA32 /* LabelFactory.swift in Sources */,
+				C5D5F0922BFBDA4100E61661 /* InfoViewController.swift in Sources */,
 				C5498C892BEA738200CBCA32 /* SceneDelegate.swift in Sources */,
 				C5498CAE2BEA968500CBCA32 /* DataSource.swift in Sources */,
 				C5498CA72BEA8EB500CBCA32 /* DogListData.swift in Sources */,
 				C5ABE0712BEBFB8500452080 /* UIEnums.swift in Sources */,
+				C5D5F0952BFBDC7900E61661 /* InfoViewModel.swift in Sources */,
 				C5ABE0662BEBC5BD00452080 /* DogListCollectionDelegate.swift in Sources */,
+				C5D5F0902BFBD96200E61661 /* InfoManager.swift in Sources */,
 				C5ABE06A2BEBCEF900452080 /* DetailViewController.swift in Sources */,
+				C5D5F0862BFBD12F00E61661 /* InfoView.swift in Sources */,
 				C5D5F07F2BFBA92D00E61661 /* DetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +393,14 @@
 				C5498C922BEA738400CBCA32 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C5D5F0882BFBD4DB00E61661 /* Info.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5D5F0892BFBD4DB00E61661 /* en */,
+			);
+			name = Info.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

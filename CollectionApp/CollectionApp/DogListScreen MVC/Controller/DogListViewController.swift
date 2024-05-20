@@ -25,9 +25,9 @@ class DogListViewController: UIViewController {
 }
 
 extension DogListViewController: DogSelectionDelegate {
-    func dogSelected(_ dog: DogListData) {
+    func dogSelected(_ dog: DogListData, at index: Int) {
         let detailVC = DetailViewController()
-        let presenter = DetailPresenter(view: detailVC, dogData: dog)
+        let presenter = DetailPresenter(view: detailVC, dogData: dog, index: index)
         detailVC.presenter = presenter
         navigationController?.pushViewController(detailVC, animated: true)
     }

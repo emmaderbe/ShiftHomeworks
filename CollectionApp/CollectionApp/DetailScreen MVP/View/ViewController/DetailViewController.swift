@@ -13,10 +13,25 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         presenter?.attachView(self)
         presenter?.viewDidLoad()
+        editButton()
+    }
+}
+
+private extension DetailViewController {
+    func editButton() {
+        detailView.buttonPressedHandler = { [weak self] in
+            self?.presenter?.showInfoView()
+        }
     }
 }
 
 extension DetailViewController: DetailViewProtocol {
+    func navigateToInfoView(with index: Int) {
+        let viewModel = InfoViewModel(index: index)
+        let infoVC = InfoViewController(viewModel: viewModel)
+        navigationController?.pushViewController(infoVC, animated: true)
+    }
+    
     func displayDogImage(named imageName: String) {
         detailView.configureImage(with: imageName)
     }
@@ -28,5 +43,4 @@ extension DetailViewController: DetailViewProtocol {
     func displayShortDescription(_ description: String) {
         detailView.configureDescription(with: description)
     }
-    
 }
