@@ -7,7 +7,7 @@ protocol DetailViewProtocol: AnyObject {
     func navigateToInfoView(with index: Int)
 }
 
-
+//MARK: - Properties and init()
 final class DetailPresenter {
     weak var view: DetailViewProtocol?
     var dogData: DogListData?
@@ -18,7 +18,11 @@ final class DetailPresenter {
         self.dogData = dogData
         self.dogIndex = index
     }
-    
+
+}
+
+//MARK: - vc functionality
+extension DetailPresenter {
     func attachView(_ view: DetailViewProtocol) {
         self.view = view
     }

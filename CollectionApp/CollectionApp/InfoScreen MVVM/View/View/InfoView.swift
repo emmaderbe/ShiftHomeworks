@@ -37,7 +37,6 @@ private extension InfoView {
 extension InfoView {
     func configureInfo(with data: String) {
         infoLabel.text = data
-    }
-    
+    }  
 }
 

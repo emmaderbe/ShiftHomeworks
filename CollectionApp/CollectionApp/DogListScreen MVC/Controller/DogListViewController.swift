@@ -24,6 +24,7 @@ class DogListViewController: UIViewController {
     }
 }
 
+//MARK: - navigation to detail screen
 extension DogListViewController: DogSelectionDelegate {
     func dogSelected(_ dog: DogListData, at index: Int) {
         let detailVC = DetailViewController()

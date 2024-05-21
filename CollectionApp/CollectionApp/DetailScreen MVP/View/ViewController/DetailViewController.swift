@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     }
 }
 
+//MARK: - add functionality to button
 private extension DetailViewController {
     func editButton() {
         detailView.buttonPressedHandler = { [weak self] in
@@ -25,6 +26,7 @@ private extension DetailViewController {
     }
 }
 
+//MARK: - detail view protocol realization 
 extension DetailViewController: DetailViewProtocol {
     func navigateToInfoView(with index: Int) {
         let viewModel = InfoViewModel(index: index)
@@ -43,4 +45,5 @@ extension DetailViewController: DetailViewProtocol {
     func displayShortDescription(_ description: String) {
         detailView.configureDescription(with: description)
     }
+    
 }
