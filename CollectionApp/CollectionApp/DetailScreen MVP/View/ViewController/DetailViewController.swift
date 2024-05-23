@@ -29,9 +29,8 @@ private extension DetailViewController {
 //MARK: - detail view protocol realization 
 extension DetailViewController: DetailViewProtocol {
     func navigateToInfoView(with index: Int) {
-        let viewModel = InfoViewModel(index: index)
-        let infoVC = InfoViewController(viewModel: viewModel)
-        navigationController?.pushViewController(infoVC, animated: true)
+        let viewController = setupViewControllerToPush(index: index)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func displayDogImage(named imageName: String) {
@@ -46,4 +45,11 @@ extension DetailViewController: DetailViewProtocol {
         detailView.configureDescription(with: description)
     }
     
+}
+
+private extension DetailViewController {
+    func setupViewControllerToPush(index: Int) -> UIViewController {
+        let viewModel = InfoViewModel(index: index)
+        return InfoViewController(viewModel: viewModel)
+    }
 }

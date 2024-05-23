@@ -27,10 +27,17 @@ class DogListViewController: UIViewController {
 //MARK: - navigation to detail screen
 extension DogListViewController: DogSelectionDelegate {
     func dogSelected(_ dog: DogListData, at index: Int) {
+        let viewController = setupViewControllerToPush(dog: dog, index: index)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+private extension DogListViewController {
+    func setupViewControllerToPush(dog: DogListData, index: Int) -> UIViewController {
         let detailVC = DetailViewController()
         let presenter = DetailPresenter(view: detailVC, dogData: dog, index: index)
         detailVC.presenter = presenter
-        navigationController?.pushViewController(detailVC, animated: true)
+        return detailVC
     }
 }
 
