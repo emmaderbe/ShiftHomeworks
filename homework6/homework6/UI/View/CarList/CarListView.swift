@@ -55,7 +55,7 @@ extension CarListView {
         tableView.dataSource = dataSource
     }
     
-//    func setDelegates(_ delegate: CarListDelegate) {
-//        tableView.delegate = delegate
-//    }
+    func setDelegates(_ delegate: CarListDelegate) {
+        tableView.delegate = delegate
+    }
 }

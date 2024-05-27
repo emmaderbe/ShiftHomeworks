@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "emblem_ogp_001.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -18,6 +18,10 @@ private extension CarManager {
 }
 
 extension CarManager {
+    func getAllBodyTypeNames(for car: CarStruct) -> [String] {
+            return Array(car.bodyTypes.keys)
+        }
+    
     func getAllBodyTypeNames() -> [String] {
         var allBodyTypeNames: [String] = []
         for car in carCatalog {
@@ -28,6 +32,10 @@ extension CarManager {
 }
 
 extension CarManager {
+    func getBodyTypeInfo(for car: CarStruct, byName name: String) -> CarBodyTypeInfo? {
+        return car.bodyTypes[name]
+    }
+    
     func getBodyTypeInfo(byName name: String) -> CarBodyTypeInfo? {
         for car in carCatalog {
             if let bodyType = car.bodyTypes[name] {
@@ -37,4 +45,3 @@ extension CarManager {
         return nil
     }
 }
-

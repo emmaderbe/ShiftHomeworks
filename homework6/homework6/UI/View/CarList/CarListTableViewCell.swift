@@ -24,7 +24,6 @@ private extension CarListTableViewCell {
         addSubview(carNameLabel)
         
         setupConstraints()
-        setupImage()
     }
 }
 
@@ -33,18 +32,12 @@ private extension CarListTableViewCell {
         NSLayoutConstraint.activate([
             emblemImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             emblemImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            emblemImage.heightAnchor.constraint(equalToConstant: 16),
-            emblemImage.widthAnchor.constraint(equalToConstant: 16),
+            emblemImage.heightAnchor.constraint(equalToConstant: 16 * 2),
+            emblemImage.widthAnchor.constraint(equalToConstant: 16 * 2),
             
             carNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             carNameLabel.leadingAnchor.constraint(equalTo: emblemImage.trailingAnchor, constant: 16),
         ])
-    }
-}
-
-private extension CarListTableViewCell {
-    func setupImage() {
-        emblemImage.layer.cornerRadius = emblemImage.frame.height / 2
     }
 }
 

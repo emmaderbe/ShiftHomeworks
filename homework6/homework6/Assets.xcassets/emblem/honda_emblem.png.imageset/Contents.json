@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Honda-Logo.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

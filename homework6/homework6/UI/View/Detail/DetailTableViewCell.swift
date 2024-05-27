@@ -1,6 +1,6 @@
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
+final class DetailTableViewCell: UITableViewCell {
     private let bodyTypeLabel = LabelFactory.createOrdinaryLabel()
     private let roundButton: UIButton = {
         let button = UIButton()
@@ -24,12 +24,12 @@ class DetailTableViewCell: UITableViewCell {
 private extension DetailTableViewCell {
     func setupView() {
         backgroundColor = ColorEnum.accentBackground
+        selectionStyle = .none
         addSubview(bodyTypeLabel)
         addSubview(roundButton)
         
         setupConstraints()
         setupButton()
-        
     }
 }
 
@@ -37,11 +37,12 @@ private extension DetailTableViewCell {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             bodyTypeLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            bodyTypeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            bodyTypeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             
             roundButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            roundButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            roundButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             roundButton.widthAnchor.constraint(equalToConstant: 16),
+            roundButton.heightAnchor.constraint(equalToConstant: 16),
         ])
     }
 }
@@ -53,7 +54,6 @@ private extension DetailTableViewCell {
     }
 }
 
-// исправить заполнение по дате
 extension DetailTableViewCell {
     func configureView(with bodyType: String) {
         bodyTypeLabel.text = bodyType

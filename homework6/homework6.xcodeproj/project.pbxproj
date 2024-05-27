@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C54C57002C04F96400E7ADA7 /* CarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54C56FF2C04F96400E7ADA7 /* CarListPresenter.swift */; };
+		C54C57052C050F8100E7ADA7 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54C57042C050F8100E7ADA7 /* DetailPresenter.swift */; };
+		C54C57072C05145C00E7ADA7 /* CarListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54C57062C05145C00E7ADA7 /* CarListDelegate.swift */; };
+		C54C570A2C05365600E7ADA7 /* DetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54C57092C05365600E7ADA7 /* DetailDelegate.swift */; };
 		C59F05982BFFA01E00B03512 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F05972BFFA01E00B03512 /* AppDelegate.swift */; };
 		C59F059A2BFFA01E00B03512 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F05992BFFA01E00B03512 /* SceneDelegate.swift */; };
 		C59F059C2BFFA01E00B03512 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F059B2BFFA01E00B03512 /* CarListViewController.swift */; };
@@ -33,6 +36,9 @@
 
 /* Begin PBXFileReference section */
 		C54C56FF2C04F96400E7ADA7 /* CarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenter.swift; sourceTree = "<group>"; };
+		C54C57042C050F8100E7ADA7 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		C54C57062C05145C00E7ADA7 /* CarListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListDelegate.swift; sourceTree = "<group>"; };
+		C54C57092C05365600E7ADA7 /* DetailDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDelegate.swift; sourceTree = "<group>"; };
 		C59F05942BFFA01E00B03512 /* homework6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59F05972BFFA01E00B03512 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C59F05992BFFA01E00B03512 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				C54C56FF2C04F96400E7ADA7 /* CarListPresenter.swift */,
+				C54C57042C050F8100E7ADA7 /* DetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -81,10 +88,20 @@
 			isa = PBXGroup;
 			children = (
 				C59F05AF2C00E90200B03512 /* View */,
-				C59F05AE2C00E8F600B03512 /* ViewController */,
 				C5BA44BF2C03CFE50021148C /* DataSource */,
+				C54C57082C05146100E7ADA7 /* Delegate */,
+				C59F05AE2C00E8F600B03512 /* ViewController */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		C54C57082C05146100E7ADA7 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C54C57062C05145C00E7ADA7 /* CarListDelegate.swift */,
+				C54C57092C05365600E7ADA7 /* DetailDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		C59F058B2BFFA01E00B03512 = {
@@ -277,6 +294,7 @@
 				C59F05BF2C00F74100B03512 /* ImageFactory.swift in Sources */,
 				C54C57002C04F96400E7ADA7 /* CarListPresenter.swift in Sources */,
 				C59F059C2BFFA01E00B03512 /* CarListViewController.swift in Sources */,
+				C54C57052C050F8100E7ADA7 /* DetailPresenter.swift in Sources */,
 				C59F05B12C00E92C00B03512 /* CarListView.swift in Sources */,
 				C5BA44BE2C03CFB50021148C /* DetailDataSource.swift in Sources */,
 				C59F05C62C03AD4000B03512 /* DetailTableViewCell.swift in Sources */,
@@ -286,9 +304,11 @@
 				C59F05B52C00EAAE00B03512 /* DetailView.swift in Sources */,
 				C59F05C12C011A2500B03512 /* TableViewFactory.swift in Sources */,
 				C59F05B32C00EA6600B03512 /* DetailViewController.swift in Sources */,
+				C54C57072C05145C00E7ADA7 /* CarListDelegate.swift in Sources */,
 				C5BA44C12C03D0150021148C /* NetworkService.swift in Sources */,
 				C59F05C42C03A62D00B03512 /* CarListDataSource.swift in Sources */,
 				C59F05BD2C00F44500B03512 /* CarListTableViewCell.swift in Sources */,
+				C54C570A2C05365600E7ADA7 /* DetailDelegate.swift in Sources */,
 				C59F05982BFFA01E00B03512 /* AppDelegate.swift in Sources */,
 				C59F05B72C00EC0400B03512 /* ColorEnum.swift in Sources */,
 				C59F059A2BFFA01E00B03512 /* SceneDelegate.swift in Sources */,
