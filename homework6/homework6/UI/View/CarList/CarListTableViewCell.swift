@@ -19,6 +19,7 @@ class CarListTableViewCell: UITableViewCell {
 private extension CarListTableViewCell {
     func setupView() {
         backgroundColor = ColorEnum.accentBackground
+        accessoryType = .detailDisclosureButton
         addSubview(emblemImage)
         addSubview(carNameLabel)
         
@@ -48,7 +49,7 @@ private extension CarListTableViewCell {
 }
 
 extension CarListTableViewCell {
-    func configureView(with data: Car) {
+    func configureView(with data: CarStruct) {
         carNameLabel.text = data.brand
         emblemImage.image = UIImage(named: data.emblem)
     }

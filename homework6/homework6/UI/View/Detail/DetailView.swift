@@ -8,7 +8,7 @@ class DetailView: UIView {
     private let priceLabel = LabelFactory.createOrdinaryLabel()
     
     private let bodyTitleLabel = LabelFactory.createTitleLabel()
-    private let tableView = TableViewFactory.createTableView(nib: DetailTableViewCell.identifier, cellIdentifier: DetailTableViewCell.identifier)
+    private let tableView = TableViewFactory.createTableView()
     
     private let priceButton: UIButton = {
         let button = UIButton()
@@ -49,6 +49,8 @@ private extension DetailView {
         bodyStack.addArrangedSubview(tableView)
 
         addSubview(priceButton)
+        
+        tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
     }
 }
 
@@ -67,15 +69,15 @@ private extension DetailView {
 }
 
 extension DetailView {
-    func configureText(priceTitle: String, price: String, bodyTitle: String, button: String) {
+    func configureText(priceTitle: String, bodyTitle: String, button: String) {
         priceTitleLabel.text = priceTitle
-        priceLabel.text = price
         bodyTitleLabel.text = bodyTitle
         priceButton.setTitle(button, for: .normal)
     }
     
-    func configureImage(with image: String) {
-        imageView.image = UIImage(named: image)
-    }
+//    func configureWithData(_ data: BodyType) {
+//        priceLabel.text = data.price
+//        imageView.image = UIImage(named: data.photo)
+//    }
 }
 

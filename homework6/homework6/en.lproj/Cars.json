@@ -1,114 +1,112 @@
-{
-  "cars": [
+[
     {
-      "brand": "Audi",
-      "emblem": "audi_emblem.png",
-      "bodyTypes": {
-        "Sedan": {
-          "price": "40000$",
-          "photo": "audi_sedan.png"
-        },
-        "Hatchback": {
-          "price": "35000$",
-          "photo": "audi_hatchback.png"
-        },
-        "SUV": {
-          "price": "50000$",
-          "photo": "audi_suv.png"
-        },
-        "Convertible": {
-          "price": "45000$",
-          "photo": "audi_convertible.png"
+        "brand": "Audi",
+        "emblem": "audi_emblem.png",
+        "bodyTypes": {
+            "Sedan": {
+                "price": "40000$",
+                "photo": "audi_sedan.png"
+            },
+            "Hatchback": {
+                "price": "35000$",
+                "photo": "audi_hatchback.png"
+            },
+            "SUV": {
+                "price": "50000$",
+                "photo": "audi_suv.png"
+            },
+            "Convertible": {
+                "price": "45000$",
+                "photo": "audi_convertible.png"
+            }
         }
-      }
     },
     {
-      "brand": "BMW",
-      "emblem": "bmw_emblem.png",
-      "bodyTypes": {
-        "Sedan": {
-          "price": "45000$",
-          "photo": "bmw_sedan.png"
-        },
-        "Hatchback": {
-          "price": "40000$",
-          "photo": "bmw_hatchback.png"
-        },
-        "SUV": {
-          "price": "55000$",
-          "photo": "bmw_suv.png"
-        },
-        "Convertible": {
-          "price": "50000$",
-          "photo": "bmw_convertible.png"
+        "brand": "BMW",
+        "emblem": "bmw_emblem.png",
+        "bodyTypes": {
+            "Sedan": {
+                "price": "45000$",
+                "photo": "bmw_sedan.png"
+            },
+            "Hatchback": {
+                "price": "40000$",
+                "photo": "bmw_hatchback.png"
+            },
+            "SUV": {
+                "price": "55000$",
+                "photo": "bmw_suv.png"
+            },
+            "Convertible": {
+                "price": "50000$",
+                "photo": "bmw_convertible.png"
+            }
         }
-      }
     },
     {
-      "brand": "Mercedes",
-      "emblem": "mercedes_emblem.png",
-      "bodyTypes": {
-        "Sedan": {
-          "price": "50000$",
-          "photo": "mercedes_sedan.png"
-        },
-        "Hatchback": {
-          "price": "45000$",
-          "photo": "mercedes_hatchback.png"
-        },
-        "SUV": {
-          "price": "60000$",
-          "photo": "mercedes_suv.png"
-        },
-        "Convertible": {
-          "price": "55000$",
-          "photo": "mercedes_convertible.png"
+        "brand": "Mercedes",
+        "emblem": "mercedes_emblem.png",
+        "bodyTypes": {
+            "Sedan": {
+                "price": "50000$",
+                "photo": "mercedes_sedan.png"
+            },
+            "Hatchback": {
+                "price": "45000$",
+                "photo": "mercedes_hatchback.png"
+            },
+            "SUV": {
+                "price": "60000$",
+                "photo": "mercedes_suv.png"
+            },
+            "Convertible": {
+                "price": "55000$",
+                "photo": "mercedes_convertible.png"
+            }
         }
-      }
     },
     {
-      "brand": "Toyota",
-      "emblem": "toyota_emblem.png",
-      "bodyTypes": {
-        "Sedan": {
-          "price": "30000$",
-          "photo": "toyota_sedan.png"
-        },
-        "Hatchback": {
-          "price": "25000$",
-          "photo": "toyota_hatchback.png"
-        },
-        "SUV": {
-          "price": "35000$",
-          "photo": "toyota_suv.png"
-        },
-        "Convertible": {
-          "price": "40000$",
-          "photo": "toyota_convertible.png"
+        "brand": "Toyota",
+        "emblem": "toyota_emblem.png",
+        "bodyTypes": {
+            "Sedan": {
+                "price": "30000$",
+                "photo": "toyota_sedan.png"
+            },
+            "Hatchback": {
+                "price": "25000$",
+                "photo": "toyota_hatchback.png"
+            },
+            "SUV": {
+                "price": "35000$",
+                "photo": "toyota_suv.png"
+            },
+            "Convertible": {
+                "price": "40000$",
+                "photo": "toyota_convertible.png"
+            }
         }
-      }
     },
     {
-      "brand": "Honda",
-      "emblem": "honda_emblem.png",
-      "bodyTypes": {
-        "Sedan": {
-          "price": "28000$",
-          "photo": "honda_sedan.png"
-        },
-        "Hatchback": {
-          "price": "24000$",
-          "photo": "honda_hatchback.png"
-        },
-        "SUV": {
-          "price": "32000$",
-          "photo": "honda_suv.png"
-        },
-        "Convertible": {
-          "price": "35000$",
-          "photo": "honda_convertible.png"
+        "brand": "Honda",
+        "emblem": "honda_emblem.png",
+        "bodyTypes": {
+            "Sedan": {
+                "price": "28000$",
+                "photo": "honda_sedan.png"
+            },
+            "Hatchback": {
+                "price": "24000$",
+                "photo": "honda_hatchback.png"
+            },
+            "SUV": {
+                "price": "32000$",
+                "photo": "honda_suv.png"
+            },
+            "Convertible": {
+                "price": "35000$",
+                "photo": "honda_convertible.png"
+            }
         }
-      }
     }
-  ]
-}
+]

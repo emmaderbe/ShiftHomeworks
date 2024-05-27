@@ -2,7 +2,7 @@ import UIKit
 
 class CarListView: UIView {
     private let titleLabel = LabelFactory.createTitleLabel()
-    private let tableView = TableViewFactory.createTableView(nib: CarListTableViewCell.identifier, cellIdentifier: CarListTableViewCell.identifier)
+    private let tableView = TableViewFactory.createTableView()
     
     override init(frame: CGRect) {
         super.init(frame: frame )
@@ -21,6 +21,8 @@ private extension CarListView {
         backgroundColor = ColorEnum.accentBackground
         addSubview(titleLabel)
         addSubview(tableView)
+        
+        tableView.register(CarListTableViewCell.self, forCellReuseIdentifier: CarListTableViewCell.identifier)
     }
 }
 
@@ -41,6 +43,10 @@ private extension CarListView {
 extension CarListView {
     func configureText(title: String) {
         titleLabel.text = title
+    }
+    
+    func reloadTableView() {
+        tableView.reloadData()
     }
 }
 

@@ -1,11 +1,10 @@
 import UIKit
 
 final class TableViewFactory {
-    static func createTableView(nib: String, cellIdentifier: String) -> UITableView {
+    static func createTableView() -> UITableView {
         let tableView = UITableView()
         tableView.backgroundColor = ColorEnum.accentBackground
-        let nib = UINib(nibName: nib, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }
 }

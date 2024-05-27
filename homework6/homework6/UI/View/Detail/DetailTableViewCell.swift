@@ -55,7 +55,7 @@ private extension DetailTableViewCell {
 
 // исправить заполнение по дате
 extension DetailTableViewCell {
-    func configureView(bodyType: String) {
+    func configureView(with bodyType: String) {
         bodyTypeLabel.text = bodyType
     }
 }
