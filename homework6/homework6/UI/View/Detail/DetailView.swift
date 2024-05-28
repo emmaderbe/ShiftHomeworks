@@ -1,7 +1,7 @@
 import UIKit
 
 final class DetailView: UIView {
-    
+    private let carTitle = LabelFactory.createTitleLabel()
     private let imageView = ImageFactory.createImage()
     
     private let priceTitleLabel = LabelFactory.createTitleLabel()
@@ -15,6 +15,7 @@ final class DetailView: UIView {
         button.backgroundColor = ColorEnum.accentGreen
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(priceButtonTapped), for: .touchUpInside)
         button.layer.cornerRadius = 16
         return button
     }()
@@ -22,6 +23,13 @@ final class DetailView: UIView {
     private let hugeStack = StackFactory.createVerticalStack(spacing: 23)
     private let priceStack = StackFactory.createVerticalStack(spacing: 8)
     private let bodyStack = StackFactory.createVerticalStack(spacing: 8)
+    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
     
     var onPriceButtonTapped: (() -> Void)?
     
@@ -41,12 +49,14 @@ private extension DetailView {
     func setupView() {
         backgroundColor = ColorEnum.accentBackground
         addSubviews()
+        carTitle.textAlignment = .center
         tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
     }
     
     func addSubviews() {
         addSubview(hugeStack)
         
+        hugeStack.addArrangedSubview(carTitle)
         hugeStack.addArrangedSubview(imageView)
         hugeStack.addArrangedSubview(priceStack)
         hugeStack.addArrangedSubview(bodyStack)
@@ -58,6 +68,7 @@ private extension DetailView {
         bodyStack.addArrangedSubview(tableView)
         
         addSubview(priceButton)
+        addSubview(activityIndicator)
     }
 }
 
@@ -75,18 +86,31 @@ private extension DetailView {
             priceButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             priceButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -80),
             priceButton.heightAnchor.constraint(equalToConstant: 51),
-            priceButton.widthAnchor.constraint(equalToConstant: 343)
+            priceButton.widthAnchor.constraint(equalToConstant: 343),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
 }
 
+private extension DetailView {
+    @objc func priceButtonTapped() {
+        onPriceButtonTapped?()
+    }
+}
+
 extension DetailView {
-    func configureText(priceTitle: String, 
+    func configureText(priceTitle: String,
                        bodyTitle: String,
                        button: String) {
         priceTitleLabel.text = priceTitle
         bodyTitleLabel.text = bodyTitle
         priceButton.setTitle(button, for: .normal)
+    }
+    
+    func configureCarTitle(_ title: String) {
+        carTitle.text = title
     }
     
     func configureImage(_ image: String) {
@@ -112,3 +136,12 @@ extension DetailView {
     }
 }
 
+extension DetailView {
+    func showLoadingIndicator() {
+        activityIndicator.startAnimating()
+    }
+    
+    func hideLoadingIndicator() {
+        activityIndicator.stopAnimating()
+    }
+}

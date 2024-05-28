@@ -29,7 +29,6 @@ private extension DetailTableViewCell {
         addSubview(roundButton)
         
         setupConstraints()
-        setupButton()
     }
 }
 
@@ -41,22 +40,17 @@ private extension DetailTableViewCell {
             
             roundButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             roundButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            roundButton.widthAnchor.constraint(equalToConstant: 16),
-            roundButton.heightAnchor.constraint(equalToConstant: 16),
+            roundButton.widthAnchor.constraint(equalToConstant: 20),
+            roundButton.heightAnchor.constraint(equalToConstant: 20),
         ])
     }
 }
 
-private extension DetailTableViewCell {
-    func setupButton() {
+extension DetailTableViewCell {
+    func configureView(with bodyType: String, isSelected: Bool) {
+        bodyTypeLabel.text = bodyType
         let imageName = isSelected ? "checkmark.circle.fill" : "circle"
         roundButton.setImage(UIImage(systemName: imageName), for: .normal)
-    }
-}
-
-extension DetailTableViewCell {
-    func configureView(with bodyType: String) {
-        bodyTypeLabel.text = bodyType
     }
 }
 

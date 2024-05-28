@@ -19,7 +19,8 @@ class CarListTableViewCell: UITableViewCell {
 private extension CarListTableViewCell {
     func setupView() {
         backgroundColor = ColorEnum.accentBackground
-        accessoryType = .detailDisclosureButton
+        selectionStyle = .none
+        accessoryType = .disclosureIndicator
         addSubview(emblemImage)
         addSubview(carNameLabel)
         

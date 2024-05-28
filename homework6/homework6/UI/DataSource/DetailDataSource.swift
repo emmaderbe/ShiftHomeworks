@@ -2,11 +2,16 @@ import UIKit
 
 final class DetailDataSource: NSObject, UITableViewDataSource {
     private var bodyTypes: [String] = []
+    private var selectedIndex: Int?
 }
 
 extension DetailDataSource {
     func updateBodyTypes(_ bodyTypes: [String]) {
         self.bodyTypes = bodyTypes
+    }
+    
+    func selectBodyType(at index: Int) {
+        self.selectedIndex = index
     }
 }
 
@@ -22,7 +27,8 @@ extension DetailDataSource {
             return UITableViewCell()
         }
         let bodyType = bodyTypes[indexPath.row]
-        cell.configureView(with: bodyType)
+        let isSelected = (indexPath.row == selectedIndex)
+        cell.configureView(with: bodyType, isSelected: isSelected)
         return cell
     }
 }

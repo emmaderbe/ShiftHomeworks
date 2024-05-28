@@ -9,6 +9,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let viewController = CarListViewController()
         let navigation = UINavigationController(rootViewController: viewController)
+        let backButtonAppearance = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationController.self])
+        backButtonAppearance.tintColor = ColorEnum.accentGreen
+        
         window.rootViewController = navigation
         
         window.makeKeyAndVisible()

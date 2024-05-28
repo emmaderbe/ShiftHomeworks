@@ -1,47 +1,30 @@
 import Foundation
 
-// MARK: - Properties and init()
-final class CarManager {
+protocol CarManagerProtocol {
+    var carCatalog: [CarStruct] { get }
+    func getSortedBodyTypes(for car: CarStruct) -> [String]
+    func getBodyTypeDetails(for car: CarStruct, byName name: String) -> (price: String, photo: String)?
+}
+
+final class CarManager: CarManagerProtocol {
     private(set) var carCatalog: [CarStruct] = []
     private let storage = NetworkingService()
     
     init() {
         loadInfo()
     }
-}
-
-// MARK: - load from JSON-file
-private extension CarManager {
-    func loadInfo() {
+    
+    private func loadInfo() {
         carCatalog = storage.loadAndParseJSON() ?? []
     }
-}
-
-extension CarManager {
-    func getAllBodyTypeNames(for car: CarStruct) -> [String] {
-            return Array(car.bodyTypes.keys)
-        }
     
-    func getAllBodyTypeNames() -> [String] {
-        var allBodyTypeNames: [String] = []
-        for car in carCatalog {
-            allBodyTypeNames.append(contentsOf: car.bodyTypes.keys)
-        }
-        return allBodyTypeNames
-    }
-}
-
-extension CarManager {
-    func getBodyTypeInfo(for car: CarStruct, byName name: String) -> CarBodyTypeInfo? {
-        return car.bodyTypes[name]
+    func getSortedBodyTypes(for car: CarStruct) -> [String] {
+        return Array(car.bodyTypes.keys).sorted()
     }
     
-    func getBodyTypeInfo(byName name: String) -> CarBodyTypeInfo? {
-        for car in carCatalog {
-            if let bodyType = car.bodyTypes[name] {
-                return bodyType
-            }
-        }
-        return nil
+    func getBodyTypeDetails(for car: CarStruct, byName name: String) -> (price: String, photo: String)? {
+        guard let bodyTypeInfo = car.bodyTypes[name] else { return nil }
+        return (price: bodyTypeInfo.price, photo: bodyTypeInfo.photo)
     }
+ 
 }

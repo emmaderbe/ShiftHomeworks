@@ -24,39 +24,59 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupPresenter()
         setupView()
+        setupButton()
         presenter?.viewDidLoad()
     }
-    
-    private func setupPresenter() {
+}
+
+private extension DetailViewController {
+    func setupPresenter() {
         presenter = DetailPresenter(view: self, car: car)
     }
-    
-    private func setupView() {
-        detailView.configureText(priceTitle: "priceTitle",
-                                 bodyTitle: "bodyTitle",
-                                 button: "Рассчитать смтоимость")
-        detailView.setDataSource(dataSource)
+}
+
+private extension DetailViewController {
+    func setupView() {
+        detailView.configureCarTitle(car.brand)
+        detailView.configureText(priceTitle: "Цена",
+                                 bodyTitle: "Выберите тип кузова",
+                                 button: "Рассчитать цену")
+        setupDataSource()
         setupDelegate()
-        setupButton()
     }
     
-    private func setupButton() {
+    func setupDataSource() {
+        detailView.setDataSource(dataSource)
+    }
+    
+    func setupDelegate() {
+        delegate.delegate = self
+        detailView.setDelegate(delegate)
+    }
+}
+
+private extension DetailViewController {
+    func setupButton() {
         detailView.onPriceButtonTapped = { [weak self] in
             self?.presenter?.calculatePrice()
         }
     }
-    
-    private func setupDelegate() {
-        delegate.delegate = self
-        detailView.setDelegate(delegate)
-    }
-    
-    @objc private func priceButtonTapped() {
-        presenter?.calculatePrice()
-    }
 }
 
 extension DetailViewController: DetailViewProtocol {
+    func selectDefaultBodyType(index: Int) {
+        dataSource.selectBodyType(at: index)
+        detailView.reloadTableView()
+    }
+    
+    func showLoadingIndicator() {
+        detailView.showLoadingIndicator()
+    }
+    
+    func hideLoadingIndicator() {
+        detailView.hideLoadingIndicator()
+    }
+    
     func displayCarBodyTypes() {
         guard let bodyTypes = presenter?.bodyTypes else {
             print("Error: No body types to display")
@@ -79,6 +99,7 @@ extension DetailViewController: DetailViewProtocol {
 extension DetailViewController: DetailDelegateProtocol {
     func bodyTypeSelected(at index: Int) {
         presenter?.didSelectBodyType(at: index)
+        dataSource.selectBodyType(at: index)
+        detailView.reloadTableView()
     }
 }
-
