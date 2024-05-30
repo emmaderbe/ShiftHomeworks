@@ -9,12 +9,11 @@ protocol DetailViewProtocol: AnyObject {
 
 //MARK: - Properties and init()
 final class DetailPresenter {
-    weak var view: DetailViewProtocol?
-    var dogData: DogListData?
+    private weak var view: DetailViewProtocol?
+    private var dogData: DogListData?
     private var dogIndex: Int?
     
-    init(view: DetailViewProtocol, dogData: DogListData?, index: Int?) {
-        self.view = view
+    init(dogData: DogListData?, index: Int?) {
         self.dogData = dogData
         self.dogIndex = index
     }
@@ -23,17 +22,14 @@ final class DetailPresenter {
 
 //MARK: - vc functionality
 extension DetailPresenter {
-    func attachView(_ view: DetailViewProtocol) {
+    func viewDidLoad(view: DetailViewProtocol) {
         self.view = view
-    }
-    
-    func viewDidLoad() {
         guard let dogData = dogData else {
             return
         }
-        view?.displayDogImage(named: dogData.dogImage)
-        view?.displayBreedName(dogData.breedName)
-        view?.displayShortDescription(dogData.shortDescription)
+        view.displayDogImage(named: dogData.dogImage)
+        view.displayBreedName(dogData.breedName)
+        view.displayShortDescription(dogData.shortDescription)
     }
     
     func showInfoView() {

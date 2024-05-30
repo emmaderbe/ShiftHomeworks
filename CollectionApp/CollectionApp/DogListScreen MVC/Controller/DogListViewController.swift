@@ -34,9 +34,8 @@ extension DogListViewController: DogSelectionDelegate {
 
 private extension DogListViewController {
     func setupViewControllerToPush(dog: DogListData, index: Int) -> UIViewController {
-        let detailVC = DetailViewController()
-        let presenter = DetailPresenter(view: detailVC, dogData: dog, index: index)
-        detailVC.presenter = presenter
+        let presenter = DetailPresenter(dogData: dog, index: index)
+        let detailVC = DetailViewController(presenter: presenter)
         return detailVC
     }
 }

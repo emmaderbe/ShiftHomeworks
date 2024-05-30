@@ -2,8 +2,18 @@ import UIKit
 
 //MARK: - Properties and vc lifecycle
 class DetailViewController: UIViewController {
-    var presenter: DetailPresenter?
+    private var presenter: DetailPresenter
     private lazy var detailView = DetailView()
+    
+    init(presenter: DetailPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = detailView
@@ -11,8 +21,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.attachView(self)
-        presenter?.viewDidLoad()
+        presenter.viewDidLoad(view: self)
         editButton()
     }
 }
@@ -21,12 +30,12 @@ class DetailViewController: UIViewController {
 private extension DetailViewController {
     func editButton() {
         detailView.buttonPressedHandler = { [weak self] in
-            self?.presenter?.showInfoView()
+            self?.presenter.showInfoView()
         }
     }
 }
 
-//MARK: - detail view protocol realization 
+//MARK: - detail view protocol realization
 extension DetailViewController: DetailViewProtocol {
     func navigateToInfoView(with index: Int) {
         let viewController = setupViewControllerToPush(index: index)

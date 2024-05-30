@@ -22,7 +22,7 @@ final class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel?.loadInfo()
+        viewModel?.viewDidLoad()
     }
 }
 
