@@ -26,7 +26,9 @@ extension ImageTableViewDataSource {
         let imageURLString = results[indexPath.row].urls.full
         if let url = URL(string: imageURLString) {
             imageLoader?.loadImage(from: url, completion: { image in
-                cell.configure(with: image)
+                DispatchQueue.main.async {
+                    cell.configure(with: image)
+                }
             })
         }
         return cell
