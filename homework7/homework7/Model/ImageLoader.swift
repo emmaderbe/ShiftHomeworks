@@ -8,7 +8,7 @@ final class ImageLoader: NSObject, ImageLoaderProtocol {
     private var completions: [URL: (UIImage?) -> Void] = [:]
     private lazy var session: URLSession = {
         let configuration = URLSessionConfiguration.background(withIdentifier: "homework7")
-        return URLSession(configuration: configuration)
+        return URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
     }()
     
     func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
@@ -27,6 +27,7 @@ extension ImageLoader: URLSessionDownloadDelegate {
         
         DispatchQueue.main.async {
             self.completions[url]?(image)
+            self.completions[url] = nil
         }
     }
     
@@ -34,6 +35,7 @@ extension ImageLoader: URLSessionDownloadDelegate {
         if let error = error, let url = task.originalRequest?.url {
             print("Failed to download image from \(url): \(error.localizedDescription)")
             DispatchQueue.main.async {
+                self.completions[url]?(nil)
                 self.completions[url] = nil
             }
         }

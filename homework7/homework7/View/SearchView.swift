@@ -62,6 +62,10 @@ extension SearchView {
     func configureText(searchPlaceholder: String) {
         searchBar.placeholder = searchPlaceholder
     }
+    
+    func clearSearchBar() {
+        searchBar.text = ""
+    }
 }
 
 extension SearchView {
@@ -75,6 +79,7 @@ extension SearchView {
     
     func reloadTableView() {
         tableView.reloadData()
+        clearSearchBar()
     }
 }
 
