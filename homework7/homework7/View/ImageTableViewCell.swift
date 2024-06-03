@@ -3,7 +3,8 @@ import UIKit
 class ImageTableViewCell: UITableViewCell {
     private let loadImage: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
+        image.backgroundColor = .systemGray6
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -18,6 +19,10 @@ class ImageTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        loadImage.image = nil
+    }
 }
 
 private extension ImageTableViewCell {
@@ -40,7 +45,7 @@ private extension ImageTableViewCell {
 }
 
 extension ImageTableViewCell {
-    func configure(with image: UIImage) {
+    func configure(with image: UIImage?) {
         loadImage.image = image
     }
 }

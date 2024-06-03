@@ -7,6 +7,7 @@ protocol SearchViewDelegate: AnyObject {
 class SearchView: UIView {
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.searchBarStyle = .minimal
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
@@ -37,6 +38,8 @@ private extension SearchView {
         backgroundColor = .white
         addSubview(searchBar)
         addSubview(tableView)
+        
+        searchBar.delegate = self
     }
 }
 
@@ -45,7 +48,7 @@ private extension SearchView {
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 8),
+            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 8),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -75,9 +78,9 @@ extension SearchView {
     }
 }
 
-extension SearchView: SearchViewDelegate {
-    func selectSeachBar(with text: String) {
-        if let text = searchBar.text {
+extension SearchView: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text, !text.isEmpty {
             delegate?.selectSeachBar(with: text)
         }
     }
