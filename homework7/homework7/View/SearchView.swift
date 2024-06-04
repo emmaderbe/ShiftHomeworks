@@ -46,11 +46,11 @@ private extension SearchView {
 private extension SearchView {
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
-            searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ConstEnum.topConstraint),
+            searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ConstEnum.leadingConstraint),
+            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ConstEnum.trailingConstraint),
             
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 8),
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: ConstEnum.topConstraint),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -58,13 +58,15 @@ private extension SearchView {
     }
 }
 
+private extension SearchView {
+    func clearSearchBar() {
+        searchBar.text = ""
+    }
+}
+
 extension SearchView {
     func configureText(searchPlaceholder: String) {
         searchBar.placeholder = searchPlaceholder
-    }
-    
-    func clearSearchBar() {
-        searchBar.text = ""
     }
 }
 
@@ -80,6 +82,7 @@ extension SearchView {
     func reloadTableView() {
         tableView.reloadData()
         clearSearchBar()
+        self.endEditing(true)
     }
 }
 

@@ -88,6 +88,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 # Ignore APIKeys.swift file
-**/KeyStruct.swift
+**/KeyEnum.swift
 
 iOSInjectionProject/

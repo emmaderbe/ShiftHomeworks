@@ -32,8 +32,9 @@ class SearchViewController: UIViewController {
 private extension SearchViewController {
     func setupView() {
         setupTableView()
-        searchView.configureText(searchPlaceholder: "Напишите, что вы хотите найти")
         setupImageLoader()
+        searchView.configureText(searchPlaceholder: "Напишите, что вы хотите найти")
+        hideKeyboardWhenTappedAround()
     }
     
     func setupTableView() {
@@ -44,6 +45,18 @@ private extension SearchViewController {
     
     func setupImageLoader() {
         tableViewDataSource.setupLoader(imageLoader)
+    }
+}
+
+private extension SearchViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
     func showAlert(title: String, message: String) {
