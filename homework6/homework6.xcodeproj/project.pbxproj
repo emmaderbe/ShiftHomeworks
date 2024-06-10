@@ -28,6 +28,7 @@
 		C59F05C62C03AD4000B03512 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F05C52C03AD4000B03512 /* DetailTableViewCell.swift */; };
 		C59F05C92C03CD2F00B03512 /* Cars.json in Resources */ = {isa = PBXBuildFile; fileRef = C59F05C72C03CD2F00B03512 /* Cars.json */; };
 		C59F05CB2C03CD8000B03512 /* CarStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F05CA2C03CD8000B03512 /* CarStruct.swift */; };
+		C5B2EEE42C172AA3008A9ABC /* ConstEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEE32C172AA3008A9ABC /* ConstEnum.swift */; };
 		C5BA44BE2C03CFB50021148C /* DetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA44BD2C03CFB50021148C /* DetailDataSource.swift */; };
 		C5BA44C12C03D0150021148C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA44C02C03D0150021148C /* NetworkService.swift */; };
 		C5BA44C42C03D0A70021148C /* CarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BA44C32C03D0A70021148C /* CarManager.swift */; };
@@ -58,6 +59,7 @@
 		C59F05C52C03AD4000B03512 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		C59F05C82C03CD2F00B03512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Cars.json; sourceTree = "<group>"; };
 		C59F05CA2C03CD8000B03512 /* CarStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarStruct.swift; sourceTree = "<group>"; };
+		C5B2EEE32C172AA3008A9ABC /* ConstEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstEnum.swift; sourceTree = "<group>"; };
 		C5BA44BD2C03CFB50021148C /* DetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataSource.swift; sourceTree = "<group>"; };
 		C5BA44C02C03D0150021148C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C5BA44C32C03D0A70021148C /* CarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarManager.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				C59F05B62C00EC0400B03512 /* ColorEnum.swift */,
+				C5B2EEE32C172AA3008A9ABC /* ConstEnum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				C59F059C2BFFA01E00B03512 /* CarListViewController.swift in Sources */,
 				C54C57052C050F8100E7ADA7 /* DetailPresenter.swift in Sources */,
 				C59F05B12C00E92C00B03512 /* CarListView.swift in Sources */,
+				C5B2EEE42C172AA3008A9ABC /* ConstEnum.swift in Sources */,
 				C5BA44BE2C03CFB50021148C /* DetailDataSource.swift in Sources */,
 				C59F05C62C03AD4000B03512 /* DetailTableViewCell.swift in Sources */,
 				C59F05AD2BFFCDD400B03512 /* LabelFactory.swift in Sources */,

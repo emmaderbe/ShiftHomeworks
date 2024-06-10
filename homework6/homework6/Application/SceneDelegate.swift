@@ -7,8 +7,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let viewController = CarListViewController()
+        let presenter = CarListPresenter()
+        let viewController = CarListViewController(presenter: presenter)
         let navigation = UINavigationController(rootViewController: viewController)
+        
         let backButtonAppearance = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationController.self])
         backButtonAppearance.tintColor = ColorEnum.accentGreen
         

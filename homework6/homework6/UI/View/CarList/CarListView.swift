@@ -29,10 +29,10 @@ private extension CarListView {
 private extension CarListView {
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ConstEnum.CarListView.top),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: ConstEnum.CarListView.top),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),

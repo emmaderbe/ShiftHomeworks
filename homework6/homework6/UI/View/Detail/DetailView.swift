@@ -16,7 +16,7 @@ final class DetailView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(priceButtonTapped), for: .touchUpInside)
-        button.layer.cornerRadius = 16
+        button.layer.cornerRadius = ConstEnum.DetailView.priceButtonRadius
         return button
     }()
     
@@ -76,17 +76,17 @@ private extension DetailView {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             hugeStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            hugeStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            hugeStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            hugeStack.bottomAnchor.constraint(equalTo: priceButton.topAnchor, constant: -16),
+            hugeStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ConstEnum.DetailView.leading),
+            hugeStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ConstEnum.DetailView.trailing),
+            hugeStack.bottomAnchor.constraint(equalTo: priceButton.topAnchor, constant: ConstEnum.DetailView.bottom),
             
-            imageView.heightAnchor.constraint(equalToConstant: 196),
-            imageView.widthAnchor.constraint(equalToConstant: 340),
+            imageView.heightAnchor.constraint(equalToConstant: ConstEnum.DetailView.imageHeight),
+            imageView.widthAnchor.constraint(equalToConstant: ConstEnum.DetailView.imageWidth),
             
             priceButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            priceButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -80),
-            priceButton.heightAnchor.constraint(equalToConstant: 51),
-            priceButton.widthAnchor.constraint(equalToConstant: 343),
+            priceButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ConstEnum.DetailView.priceButtom),
+            priceButton.heightAnchor.constraint(equalToConstant: ConstEnum.DetailView.priceButtonHeight),
+            priceButton.widthAnchor.constraint(equalToConstant: ConstEnum.DetailView.priceButtonWidth),
             
             activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),

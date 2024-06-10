@@ -25,6 +25,12 @@ private extension CarListTableViewCell {
         addSubview(carNameLabel)
         
         setupConstraints()
+        setupImage()
+    }
+    
+    func setupImage() {
+        emblemImage.backgroundColor = ColorEnum.accentGreen
+        emblemImage.layer.cornerRadius = ConstEnum.CarListView.imageRadius
     }
 }
 
@@ -32,12 +38,12 @@ private extension CarListTableViewCell {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             emblemImage.centerYAnchor.constraint(equalTo: centerYAnchor),
-            emblemImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            emblemImage.heightAnchor.constraint(equalToConstant: 16 * 2),
-            emblemImage.widthAnchor.constraint(equalToConstant: 16 * 2),
+            emblemImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ConstEnum.CarListView.leading),
+            emblemImage.heightAnchor.constraint(equalToConstant: ConstEnum.CarListView.imageSize),
+            emblemImage.widthAnchor.constraint(equalToConstant: ConstEnum.CarListView.imageSize),
             
             carNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            carNameLabel.leadingAnchor.constraint(equalTo: emblemImage.trailingAnchor, constant: 16),
+            carNameLabel.leadingAnchor.constraint(equalTo: emblemImage.trailingAnchor, constant: ConstEnum.CarListView.leading),
         ])
     }
 }
@@ -45,7 +51,6 @@ private extension CarListTableViewCell {
 extension CarListTableViewCell {
     func configureView(with data: CarStruct) {
         carNameLabel.text = data.brand
-        emblemImage.image = UIImage(named: data.emblem)
     }
 }
 

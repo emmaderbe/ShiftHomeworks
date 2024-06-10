@@ -4,7 +4,17 @@ class CarListViewController: UIViewController {
     private let carListView = CarListView()
     private let dataSource = CarListDataSource()
     private let delegate = CarListDelegate()
-    private var presenter: CarListPresenter?
+    private var presenter: CarListPresenter
+    
+    init(presenter: CarListPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = carListView
@@ -12,15 +22,8 @@ class CarListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPresenter()
+        presenter.viewDidLoad(view: self)
         setupView()
-        presenter?.viewDidLoad()
-    }
-}
-
-private extension CarListViewController {
-    func setupPresenter() {
-        presenter = CarListPresenter(view: self)
     }
 }
 
@@ -43,21 +46,19 @@ private extension CarListViewController {
 
 extension CarListViewController: CarListDelegateProtocol {
     func carSelected(at index: Int) {
-        presenter?.carSelected(at: index)
+        presenter.carSelected(at: index)
     }
 }
 
 extension CarListViewController: CarListViewProtocol {
     func navigateToView(with car: CarStruct) {
-        let detailVC = DetailViewController(car: car)
+        let presenter = DetailPresenter(car: car)
+        let detailVC = DetailViewController(presenter: presenter)
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func displayCars() {
-        guard let cars = presenter?.cars else {
-            print("Error: No cars to display")
-            return
-        }
+        let cars = presenter.cars
         dataSource.updateCars(cars)
         delegate.updateCars(cars)
         carListView.reloadTableView()

@@ -7,20 +7,21 @@ protocol CarListViewProtocol: AnyObject {
 
 final class CarListPresenter {
     weak var view: CarListViewProtocol?
-    private let carManager = CarManager()
+    private let carManager: CarManagerProtocol
     
     var cars: [CarStruct] {
         return carManager.carCatalog
     }
     
-    init(view: CarListViewProtocol? = nil) {
-        self.view = view
+    init(carManager: CarManagerProtocol = CarManager()) {
+        self.carManager = carManager
     }
 }
 
 extension CarListPresenter {
-    func viewDidLoad() {
-        view?.displayCars()
+    func viewDidLoad(view: CarListViewProtocol) {
+        self.view = view
+        view.displayCars()
     }
 }
 

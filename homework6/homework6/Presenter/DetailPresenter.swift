@@ -11,7 +11,6 @@ protocol DetailViewProtocol: AnyObject {
 
 protocol DetailPresenterProtocol: AnyObject {
     var bodyTypes: [String] { get }
-    func viewDidLoad()
     func didSelectBodyType(at index: Int)
     func calculatePrice()
 }
@@ -23,14 +22,17 @@ final class DetailPresenter: DetailPresenterProtocol {
     private let carManager: CarManagerProtocol
     private var selectedBodyType: String?
     
-    init(view: DetailViewProtocol, car: CarStruct, carManager: CarManagerProtocol = CarManager()) {
-        self.view = view
+    init(car: CarStruct, carManager: CarManagerProtocol = CarManager()) {
         self.car = car
         self.carManager = carManager
     }
     
     var bodyTypes: [String] {
         return carManager.getSortedBodyTypes(for: car)
+    }
+    
+    var carBrand: String {
+        return car.brand
     }
 }
 
@@ -47,8 +49,9 @@ private extension DetailPresenter {
 
 
 extension DetailPresenter {
-    func viewDidLoad() {
-        view?.showLoadingIndicator()
+    func viewDidLoad(view: DetailViewProtocol) {
+        self.view = view
+        view.showLoadingIndicator()
         DispatchQueue.global().asyncAfter(deadline: .now() + 1.5) { [weak self] in
             DispatchQueue.main.async {
                 self?.view?.hideLoadingIndicator()

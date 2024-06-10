@@ -36,12 +36,12 @@ private extension DetailTableViewCell {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             bodyTypeLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            bodyTypeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            bodyTypeLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             
             roundButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            roundButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            roundButton.widthAnchor.constraint(equalToConstant: 20),
-            roundButton.heightAnchor.constraint(equalToConstant: 20),
+            roundButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            roundButton.widthAnchor.constraint(equalToConstant: ConstEnum.DetailView.roundButtonSize),
+            roundButton.heightAnchor.constraint(equalToConstant: ConstEnum.DetailView.roundButtonSize),
         ])
     }
 }

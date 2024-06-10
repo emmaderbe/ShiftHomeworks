@@ -4,11 +4,11 @@ class DetailViewController: UIViewController {
     private let detailView = DetailView()
     private var dataSource = DetailDataSource()
     private let delegate = DetailDelegate()
-    private var presenter: DetailPresenter?
-    private let car: CarStruct
+    private var presenter: DetailPresenter
+//    private let car: CarStruct
     
-    init(car: CarStruct) {
-        self.car = car
+    init(presenter: DetailPresenter) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -22,22 +22,15 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPresenter()
+        presenter.viewDidLoad(view: self)
         setupView()
         setupButton()
-        presenter?.viewDidLoad()
-    }
-}
-
-private extension DetailViewController {
-    func setupPresenter() {
-        presenter = DetailPresenter(view: self, car: car)
     }
 }
 
 private extension DetailViewController {
     func setupView() {
-        detailView.configureCarTitle(car.brand)
+        detailView.configureCarTitle(presenter.carBrand)
         detailView.configureText(priceTitle: "Цена",
                                  bodyTitle: "Выберите тип кузова",
                                  button: "Рассчитать цену")
@@ -58,7 +51,7 @@ private extension DetailViewController {
 private extension DetailViewController {
     func setupButton() {
         detailView.onPriceButtonTapped = { [weak self] in
-            self?.presenter?.calculatePrice()
+            self?.presenter.calculatePrice()
         }
     }
 }
@@ -78,10 +71,7 @@ extension DetailViewController: DetailViewProtocol {
     }
     
     func displayCarBodyTypes() {
-        guard let bodyTypes = presenter?.bodyTypes else {
-            print("Error: No body types to display")
-            return
-        }
+        let bodyTypes = presenter.bodyTypes
         dataSource.updateBodyTypes(bodyTypes)
         delegate.updateBodyTypes(bodyTypes)
         detailView.reloadTableView()
@@ -98,7 +88,7 @@ extension DetailViewController: DetailViewProtocol {
 
 extension DetailViewController: DetailDelegateProtocol {
     func bodyTypeSelected(at index: Int) {
-        presenter?.didSelectBodyType(at: index)
+        presenter.didSelectBodyType(at: index)
         dataSource.selectBodyType(at: index)
         detailView.reloadTableView()
     }
