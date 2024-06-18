@@ -46,11 +46,11 @@ private extension SearchView {
 private extension SearchView {
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ConstEnum.topConstraint),
-            searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ConstEnum.leadingConstraint),
-            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ConstEnum.trailingConstraint),
+            searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ConstraintsEnum.topConstraint),
+            searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ConstraintsEnum.leadingConstraint),
+            searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ConstraintsEnum.trailingConstraint),
             
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: ConstEnum.topConstraint),
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: ConstraintsEnum.topConstraint),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),

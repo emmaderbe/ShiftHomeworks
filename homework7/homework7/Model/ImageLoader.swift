@@ -20,9 +20,9 @@ final class ImageLoader: NSObject, ImageLoaderProtocol {
 
 extension ImageLoader: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        guard let url = downloadTask.originalRequest?.url else { return }
-        
-        guard let data = try? Data(contentsOf: location) else { return }
+        guard let url = downloadTask.originalRequest?.url,
+              let data = try? Data(contentsOf: location)
+        else { return }
         let image = UIImage(data: data)
         
         DispatchQueue.main.async {
@@ -33,7 +33,6 @@ extension ImageLoader: URLSessionDownloadDelegate {
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if let error = error, let url = task.originalRequest?.url {
-            print("Failed to download image from \(url): \(error.localizedDescription)")
             DispatchQueue.main.async {
                 self.completions[url]?(nil)
                 self.completions[url] = nil

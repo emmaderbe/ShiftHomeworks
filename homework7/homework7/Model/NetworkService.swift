@@ -1,7 +1,6 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    var results: [PhotoResult] { get }
     func fetchPhotos(query: String, completion: @escaping (Result<[PhotoResult], Error>) -> Void)
 }
 
@@ -14,7 +13,7 @@ enum NetworkError: Error {
 }
 
 final class NetworkService: NetworkServiceProtocol {
-    private(set) var results: [PhotoResult] = []
+    private var results: [PhotoResult] = []
     private let apiKey = KeyStruct.key
     private let urlSession = URLSession.shared
 }
@@ -41,13 +40,17 @@ private extension NetworkService {
 extension NetworkService {
     func fetchPhotos(query: String, completion: @escaping (Result<[PhotoResult], Error>) -> Void) {
         guard let request = makeRequest(query: query) else {
-            completion(.failure(NetworkError.invalidURL))
+            DispatchQueue.main.async {
+                completion(.failure(NetworkError.invalidURL))
+            }
             return
         }
         
         let task = urlSession.dataTask(with: request) { [weak self] data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(NetworkError.unknown))
+                DispatchQueue.main.async {
+                    completion(.failure(NetworkError.unknown))
+                }
                 return
             }
             
@@ -56,8 +59,8 @@ extension NetworkService {
                 if let data = data {
                     do {
                         let jsonResult = try JSONDecoder().decode(APIResponse.self, from: data)
+                        self?.results = jsonResult.results
                         DispatchQueue.main.async {
-                            self?.results = jsonResult.results
                             if jsonResult.results.isEmpty {
                                 completion(.failure(NetworkError.noResults))
                             } else {
@@ -65,17 +68,27 @@ extension NetworkService {
                             }
                         }
                     } catch {
-                        completion(.failure(error))
+                        DispatchQueue.main.async {
+                            completion(.failure(error))
+                        }
                     }
                 } else {
-                    completion(.failure(NetworkError.unknown))
+                    DispatchQueue.main.async {
+                        completion(.failure(NetworkError.unknown))
+                    }
                 }
             case 400...499:
-                completion(.failure(NetworkError.clientError))
+                DispatchQueue.main.async {
+                    completion(.failure(NetworkError.clientError))
+                }
             case 500...599:
-                completion(.failure(NetworkError.serverError))
+                DispatchQueue.main.async {
+                    completion(.failure(NetworkError.serverError))
+                }
             default:
-                completion(.failure(NetworkError.unknown))
+                DispatchQueue.main.async {
+                    completion(.failure(NetworkError.unknown))
+                }
             }
         }
         task.resume()
