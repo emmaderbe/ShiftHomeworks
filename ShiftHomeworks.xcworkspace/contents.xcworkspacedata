@@ -4,6 +4,9 @@
    <FileRef
       location = "group:homework6/homework6.xcodeproj">
    </FileRef>
+  <FileRef
+      location = "group:homework7/homework7.xcodeproj">
+   </FileRef>
    <FileRef
       location = "group:CollectionApp/CollectionApp.xcodeproj">
    </FileRef>
