@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bmw-3-series-sedan-sp-desktop.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
